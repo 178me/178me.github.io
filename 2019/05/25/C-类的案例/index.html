@@ -96,18 +96,25 @@
 
 
 
-  <meta name="description" content="一些小小小小的感悟吧！">
+  <meta name="description" content="前言:最近学习了C++中的内容，一直没有动手实践，所以就花了一些时间做了一个小案例，总结一下自己从C++语法到类的一些知识。">
 <meta name="keywords" content="178me">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习面向对象思想的小结">
-<meta property="og:url" content="http://yoursite.com/2019/05/22/学习面向对象思想的小结/index.html">
+<meta property="og:title" content="C++类的案例">
+<meta property="og:url" content="http://yoursite.com/2019/05/25/C-类的案例/index.html">
 <meta property="og:site_name" content="178me">
-<meta property="og:description" content="一些小小小小的感悟吧！">
+<meta property="og:description" content="前言:最近学习了C++中的内容，一直没有动手实践，所以就花了一些时间做了一个小案例，总结一下自己从C++语法到类的一些知识。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T09:28:12.767Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/C-类的案例/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/C-类的案例/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/C-类的案例/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/C-类的案例/流程图.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/C-类的案例/步骤1.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/C-类的案例/步骤二.png">
+<meta property="og:updated_time" content="2019-05-25T12:51:16.522Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习面向对象思想的小结">
-<meta name="twitter:description" content="一些小小小小的感悟吧！">
+<meta name="twitter:title" content="C++类的案例">
+<meta name="twitter:description" content="前言:最近学习了C++中的内容，一直没有动手实践，所以就花了一些时间做了一个小案例，总结一下自己从C++语法到类的一些知识。">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/25/C-类的案例/1.png">
 
 
 
@@ -115,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/22/学习面向对象思想的小结/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/25/C-类的案例/">
 
 
 
@@ -125,7 +132,7 @@
   };
 </script>
 
-  <title>学习面向对象思想的小结 | 178me</title>
+  <title>C++类的案例 | 178me</title>
   
 
 
@@ -345,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/学习面向对象思想的小结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/25/C-类的案例/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZeLinYang">
@@ -362,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">学习面向对象思想的小结
+          <h1 class="post-title" itemprop="name headline">C++类的案例
 
               
             
@@ -388,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-05-22 16:51:47 / 修改时间：17:28:12" itemprop="dateCreated datePublished" datetime="2019-05-22T16:51:47+08:00">2019-05-22</time>
+              <time title="创建时间：2019-05-25 15:48:43 / 修改时间：20:51:16" itemprop="dateCreated datePublished" datetime="2019-05-25T15:48:43+08:00">2019-05-25</time>
             
 
             
@@ -427,12 +434,47 @@
       
 
       
-        <p>一些小小小小的感悟吧！<br><a id="more"></a></p>
-<h1 id="面向对象以前："><a href="#面向对象以前：" class="headerlink" title="面向对象以前："></a>面向对象以前：</h1><p>在我们学习C语言的内容时，我们首先是在main函数里一步一步书写代码，后面学习了函数，就把代码写进函数里，然后在main函数里面去调用函数。其实我们在学习的过程中一点点的深入中，在朝着对象前进中。</p>
-<p>在我们面向过程的时候，我们一般都是对我们要做的操作写进函数里，然后一步步的实现我们的目的，但我发现一个问题就是，在我们代码量逐渐的增加，我们的函数和属性会变得越来越多，这个时候我们代码管理起来可能会非常的麻烦，所有我想，这就是我们后面会采用面向对象的原因之一吧！</p>
-<p>##面向对象</p>
-<p>面向对象思想其实更像我们人类的思想，我们可以把同一个对象的属性和方法做一个集合，我们需要用他的时候就直接从里面调用就行了，这一个集合就称之为类；例如一个学生类：我们可以在类里面定义好他们的属性，比如说身高，体重，年龄等，还可以给他们定义方法，比如，吃饭，睡觉，学习，找女朋友啥的。当我们需要用到他的时候我们只需要调用方法或属性即可。而且我想添加，删除方法、属性都可以快速找到，方便管理。</p>
-<p>结语：刚踏入的小萌新，多多指教。</p>
+        <p>前言:最近学习了C++中的内容，一直没有动手实践，所以就花了一些时间做了一个小案例，总结一下自己从C++语法到类的一些知识。</p>
+<a id="more"></a>
+<h1 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a><strong>项目截图</strong></h1><p>下面是一些案例运行的截图，没有认真的去写游戏界面，见谅下╰(￣ω￣ｏ)</p>
+<hr>
+<p><img src="/2019/05/25/C-类的案例/1.png" alt="游戏界面1" title="玩家出牌"></p>
+<p><img src="/2019/05/25/C-类的案例/2.png" alt="游戏界面1" title="比大小结果"></p>
+<p><img src="/2019/05/25/C-类的案例/3.png" alt="游戏界面1" title="胜负判定"></p>
+<h2 id="做项目需要的思维及流程图"><a href="#做项目需要的思维及流程图" class="headerlink" title="做项目需要的思维及流程图"></a><strong>做项目需要的思维及流程图</strong></h2><p>这里配上文字和一个简单还有点丑的流程图做介绍ヽ(￣ω￣(￣ω￣〃)ゝ</p>
+<p>这里插上一句，大家如果有兴趣用代码写一些东西的话，最好是先做好一个流程图，这样子写代码就会有明确的方向，可以更有效率的完成项目。</p>
+<ul>
+<li>下面是写流程图需要思考的一些东西：</li>
+</ul>
+<blockquote>
+<p>1.先用人类的思维思考。eg:比大小这个项目，我们需要有玩家，扑克牌，规则才能进行游戏。<br>2.抽象化理解。eg:玩家需要有姓名，分数的属性，需要的操作就是摸牌，出牌，在我们C++语言里就叫做方法；<br>3.拆分。eg:对于摸牌这个操作，我们可以再仔细一点，摸牌需要一副牌，然后你摸一张牌，那副牌就减少你摸的那一张牌。<br>4.优化细节。eg：游戏界面或者代码的注释或者更简单的写法。</p>
+</blockquote>
+<ul>
+<li>扑克牌之比大小流程图<ul>
+<li>进入游戏</li>
+<li>展示游戏界面</li>
+<li>开始游戏</li>
+<li>游戏进行中</li>
+<li>游戏输赢判定</li>
+<li>提示是否继续游戏 继续就循环，否则退出游戏</li>
+</ul>
+</li>
+</ul>
+<p>额，这里的文字描述范围比较大，没有更细的描述，感觉还是应该用电脑画流程图比较好。。。这次就这样吧，下次好好写。其实我感觉更重要的是上面的思维，有兴趣可以深入去了解。</p>
+<p><img src="/2019/05/25/C-类的案例/流程图.jpg" alt="简易的流程图" title="流程图"></p>
+<h3 id="项目的实现以及经验"><a href="#项目的实现以及经验" class="headerlink" title="项目的实现以及经验"></a><strong>项目的实现以及经验</strong></h3><blockquote>
+<p>主要是用了C++的一些其他基本语法知识和简单的类操作，还有一些其他项目积累的一些经验等。    </p>
+<blockquote>
+<p>在这里建议大家，如果想要好好的学习，可以培养对编程的兴趣。在这里肯定会有人问怎么培养，那我就说一下我自己的方法吧。<br>培养编程兴趣最好就是将自己喜欢的东西与编程结合在一起。举个栗子吧：你喜欢游戏，那你可以多编写一些小游戏的项目。喜欢购物，那就自己编写你自己的购物车，想怎么买怎么买，虽然是假的，但只要你做的好，迟早有一天会变成真的。<br>在生活中多思考哪些东西可以用你所学的东西编写出来，你写的东西越多，你兴趣慢慢就上来了。</p>
+</blockquote>
+</blockquote>
+<h4 id="项目的源代码"><a href="#项目的源代码" class="headerlink" title="项目的源代码"></a><strong>项目的源代码</strong></h4><p>源代码已经开放，点击<a href="https://github.com/178me/Case_cj/tree/master/Poker_Size_contrast" target="_blank" rel="noopener">项目源代码</a>即可。</p>
+<p>点进去直接打开源文件直接copy就行了</p>
+<p>注意有两个源文件，一个头文件。你要创建两个源文件和一个头文件分别写入。</p>
+<p><img src="/2019/05/25/C-类的案例/步骤1.png" alt></p>
+<p><img src="/2019/05/25/C-类的案例/步骤二.png" alt></p>
+<p>教大家一个如何简单的读懂代码，先看一遍注释，然后从main函数第一个语句设置断点调试，然后跟着系统的脚步一步一步的走。要是不懂怎么调试请点击这个<a href="https://jingyan.baidu.com/article/e73e26c0da3c0224adb6a731.html" target="_blank" rel="noopener">链接</a>。</p>
+<p>如果有能力的同学可以扩展或者写一个更好(　o=^•ェ•)o　┏━┓</p>
 
       
     </div>
@@ -463,8 +505,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/09/shell快捷键大全/" rel="next" title="shell快捷键大全">
-                <i class="fa fa-chevron-left"></i> shell快捷键大全
+              <a href="/2019/05/22/学习面向对象思想的小结/" rel="next" title="学习面向对象思想的小结">
+                <i class="fa fa-chevron-left"></i> 学习面向对象思想的小结
               </a>
             
           </div>
@@ -472,10 +514,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/25/C-类的案例/" rel="prev" title="C++类的案例">
-                C++类的案例 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -586,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象以前："><span class="nav-number">1.</span> <span class="nav-text">面向对象以前：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目截图"><span class="nav-number">1.</span> <span class="nav-text">项目截图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#做项目需要的思维及流程图"><span class="nav-number">1.1.</span> <span class="nav-text">做项目需要的思维及流程图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目的实现以及经验"><span class="nav-number">1.1.1.</span> <span class="nav-text">项目的实现以及经验</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#项目的源代码"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">项目的源代码</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
