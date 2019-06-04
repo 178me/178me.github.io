@@ -4,12 +4,12 @@
 
 # Site
 title: 178me
-subtitle: 人因梦想而伟大。
+subtitle: 为了开发而努力开发 
 description: 刚踏入编成的小萌新一枚
 keywords: 178me
 author: ZeLinYang
 language: zh-CN
-timezone: 
+timezone: Asia/Shanghai 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -55,8 +55,8 @@ index_generator:
   
 # Category & Tag
 default_category: uncategorized
-category_map: 学习
-tag_map: C
+category_map: 
+tag_map: 
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -81,3 +81,11 @@ deploy:
   type: git
   repository: git@github.com:178me/178me.github.io
   branch: master
+
+
+# 博客搜索功能配置
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000

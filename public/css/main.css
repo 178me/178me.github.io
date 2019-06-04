@@ -1085,7 +1085,7 @@ pre .javascript .function {
   }
 }
 .header {
-  background: transparent;
+  background: url("Myblog/image/background.jpg");
 }
 .header-inner {
   position: relative;
@@ -1765,7 +1765,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e8fffb;
+  background: #9dff65;
 }
 .feed-link,
 .chat {

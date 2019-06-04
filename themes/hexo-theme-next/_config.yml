@@ -227,7 +227,7 @@ avatar:
   # In theme directory (source/images): /images/avatar.gif
   # In site directory (source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: 
+  url:  /images/header.jpg 
   # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -1209,3 +1209,10 @@ vendors:
 css: css
 js: js
 images: images
+
+post_wordcount:
+  item_text: true
+  wordcount: true #单篇文章字数
+  min2read: true #单篇阅读时长
+  totalcount: true #站点总字数
+  separated_meta: true
