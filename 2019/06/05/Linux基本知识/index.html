@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="函数的一些积累">
+  <meta name="description" content="记录初学Linux所学习的知识">
 <meta name="keywords" content="note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ note1">
-<meta property="og:url" content="http://yoursite.com/2019/06/04/C++ note1-1/index.html">
+<meta property="og:title" content="Linux基本知识">
+<meta property="og:url" content="http://yoursite.com/2019/06/05/Linux基本知识/index.html">
 <meta property="og:site_name" content="178me">
-<meta property="og:description" content="函数的一些积累">
+<meta property="og:description" content="记录初学Linux所学习的知识">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-04T09:25:21.416Z">
+<meta property="og:updated_time" content="2019-06-06T04:21:53.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ note1">
-<meta name="twitter:description" content="函数的一些积累">
+<meta name="twitter:title" content="Linux基本知识">
+<meta name="twitter:description" content="记录初学Linux所学习的知识">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/04/C++ note1-1/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/05/Linux基本知识/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>C++ note1 | 178me</title>
+  <title>Linux基本知识 | 178me</title>
   
 
 
@@ -345,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/C++ note1-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/05/Linux基本知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZeLinYang">
@@ -362,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++ note1
+          <h1 class="post-title" itemprop="name headline">Linux基本知识
 
               
             
@@ -388,12 +388,24 @@
                 
               
 
-              <time title="创建时间：2019-06-04 16:47:09 / 修改时间：17:25:21" itemprop="dateCreated datePublished" datetime="2019-06-04T16:47:09+08:00">2019-06-04</time>
+              <time title="创建时间：2019-06-05 16:27:11" itemprop="dateCreated datePublished" datetime="2019-06-05T16:27:11+08:00">2019-06-05</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-06 12:21:53" itemprop="dateModified" datetime="2019-06-06T12:21:53+08:00">2019-06-06</time>
               
             
           </span>
@@ -410,7 +422,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linuxu/" itemprop="url" rel="index"><span itemprop="name">Linuxu</span></a></span>
 
                 
                 
@@ -445,19 +457,79 @@
       
 
       
-        <p>函数的一些积累</p>
-<a id="more"></a>  
-<h2 id="常用头文件"><a href="#常用头文件" class="headerlink" title="常用头文件"></a>常用头文件</h2><p><strong>#include <iostream> -&gt; 包含头文件:输入输出流</iostream></strong><br>详情了解cin请点击<a href="https://blog.csdn.net/weixin_41042404/article/details/80934191" target="_blank" rel="noopener">传送门</a>  </p>
-<p><strong>using namespace std -&gt; std命名空间</strong>  </p>
-<p><strong>#include <vector> -&gt; 包含向量的头文件</vector></strong></p>
-<p><strong>#include <algorithm> -&gt; 包含排序方法</algorithm></strong><br>sort() -&gt; 数组升序排序<br>reverse() -&gt; 数组逆序排序</p>
-<p><strong>#include <iterator> -&gt; 迭代器</iterator></strong>  </p>
-<p><strong>#include <iomanip> -&gt; 设置输出格式</iomanip></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setw(2)  //设置字符宽度为2个字节  </span><br><span class="line">setiosflags(ios::left)  //设置文字左对齐</span><br></pre></td></tr></table></figure></p>
-<p><strong>#include <string> -&gt; 字符串操作</string></strong>  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">string s;      //定义string对象s</span><br><span class="line">s.length()     //返回字符串长度，即字符个数</span><br><span class="line">s.empty()      //判读字符串是否为空串</span><br><span class="line">s.at(i)        //返回字符串的第i个字符</span><br><span class="line">s[i]           //等同于s.at(i)</span><br><span class="line">s.substr(int i,int j)     //获取从i到j的字符串</span><br><span class="line">其他方法</span><br><span class="line">getline(cin\cout,变量)    //输入或输出变量</span><br></pre></td></tr></table></figure>
-<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数  "></a>常用函数  </h2><blockquote>
-<p><strong><a href="https://blog.csdn.net/qq_22122811/article/details/52738029" target="_blank" rel="noopener">memset()</a></strong> -&gt; 数组初始化函数</p>
-</blockquote>
+        <p>记录初学Linux所学习的知识<br><a id="more"></a></p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li>命令区分<code>大小写</code>  </li>
+<li>使用<code>Tab</code>来补全命令,按两下显示可补全的命令  </li>
+<li><code>上下键</code>可以查看历史命令  </li>
+<li><code>Ctrl + L</code>可以清屏  </li>
+<li>使用<code>分号</code>隔开语句可以实现多条命令  </li>
+<li><code>\</code>可以断开长命令，增强可读性  </li>
+<li>命令后加一个<code>&amp;</code>可使命令后台运行  </li>
+</ol>
+<h2 id="Linux文件系统目录结构"><a href="#Linux文件系统目录结构" class="headerlink" title="Linux文件系统目录结构"></a>Linux文件系统目录结构</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">目录</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:left">根目录  </td>
+</tr>
+<tr>
+<td style="text-align:center">/bin</td>
+<td style="text-align:left">存放必要的命令的目录  </td>
+</tr>
+<tr>
+<td style="text-align:center">/dev</td>
+<td style="text-align:left">任何硬件与接口设备以文件的形式放在这个目录下  </td>
+</tr>
+<tr>
+<td style="text-align:center">/etc</td>
+<td style="text-align:left">存放系统配置文件的目录  </td>
+</tr>
+<tr>
+<td style="text-align:center">/home</td>
+<td style="text-align:left">系统默认的普通用户家目录 </td>
+</tr>
+<tr>
+<td style="text-align:center">/lib</td>
+<td style="text-align:left">存放必要运行库的目录  </td>
+</tr>
+<tr>
+<td style="text-align:center">/mnt</td>
+<td style="text-align:left">各项设备的文件系统挂载点  </td>
+</tr>
+<tr>
+<td style="text-align:center">/proc</td>
+<td style="text-align:left">存放存储进程和系统信息的目录  </td>
+</tr>
+<tr>
+<td style="text-align:center">/root</td>
+<td style="text-align:left">系统管理员的家目录  </td>
+</tr>
+<tr>
+<td style="text-align:center">/sbin</td>
+<td style="text-align:left">存放系统管理员的目录  </td>
+</tr>
+<tr>
+<td style="text-align:center">/tmp</td>
+<td style="text-align:left">临时文件的存放位置，可供所有用户执行写入操作的特有权限  </td>
+</tr>
+<tr>
+<td style="text-align:center">/usr</td>
+<td style="text-align:left">UNIX software resource的缩写，是操作系统软件资源所默认放置的目录</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>绝对命令与相对命令<br>绝对命令是从<code>/</code>开始的，也就是根目录;而相对路径是从当前目录开始  </li>
+</ul>
+<h2 id="Linux基本命令"><a href="#Linux基本命令" class="headerlink" title="Linux基本命令"></a>Linux基本命令</h2><p>大部分的命令可以参考我的<a href="https://178me.github.io/2019/06/02/shell-note1/#more" target="_blank" rel="noopener">另一篇文章</a>，下面补充一些其他的命令：  </p>
+<p>1. </p>
 
       
     </div>
@@ -494,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/04/C++ note2/" rel="next" title="C++ note2">
-                <i class="fa fa-chevron-left"></i> C++ note2
+              <a href="/2019/06/04/C++ note3/" rel="next" title="C++ note3">
+                <i class="fa fa-chevron-left"></i> C++ note3
               </a>
             
           </div>
@@ -503,10 +575,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/04/C++ note3/" rel="prev" title="C++ note3">
-                C++ note3 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -657,7 +725,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用头文件"><span class="nav-number">1.</span> <span class="nav-text">常用头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用函数"><span class="nav-number">2.</span> <span class="nav-text">常用函数  </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux文件系统目录结构"><span class="nav-number">2.</span> <span class="nav-text">Linux文件系统目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux基本命令"><span class="nav-number">3.</span> <span class="nav-text">Linux基本命令</span></a></li></ol></div>
             
 
           </div>
