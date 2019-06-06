@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="178me">
 <meta property="og:description" content="忘记了就进来看看">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-04T09:26:19.876Z">
+<meta property="og:updated_time" content="2019-06-06T11:11:50.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell_note1">
 <meta name="twitter:description" content="忘记了就进来看看">
@@ -405,7 +405,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-04 17:26:19" itemprop="dateModified" datetime="2019-06-04T17:26:19+08:00">2019-06-04</time>
+                <time title="修改时间：2019-06-06 19:11:50" itemprop="dateModified" datetime="2019-06-06T19:11:50+08:00">2019-06-06</time>
               
             
           </span>
@@ -464,10 +464,14 @@
 </ul>
 <p>输出字符串或变量提取后的值，常用格式如下:<br>echo 字符串 : 输出字符串在终端屏幕上<br>echo $变量 : 输出变量提取过后的值  </p>
 <ul>
-<li><strong>date</strong><br>显示及设置系统的时间或日期,常用格式如下:<br>date : 默认格式查看系统时间<br>date -d 字符串 : 给出字符串描述的时间，如date -d “2019-9-9” +参数<br>参数(作用) : date –help 帮助信息  </li>
-<li><strong>reboot</strong><br>重启系统，使用管理权限<br>sudo reboot : 管理员权限重启系统   </li>
-<li><strong>poweroff</strong><br>关闭系统，使用管理员权限<br>sudo poweroff : 管理员权限关闭系统  </li>
-<li><strong>wget</strong><br>在终端中下载网络文件，格式为<br>wget 参数 下载地址<br>-b : 后台下载模式<br>-p : 下载到制定目录<br>-t : 最大尝试次数<br>-c : 断电续传<br>-p : 下载页面内所有资源，包括图片，视频等<br>-r : 递归下载  </li>
+<li><p><strong>date</strong><br>显示及设置系统的时间或日期,常用格式如下:<br>date : 默认格式查看系统时间<br>date -d 字符串 : 给出字符串描述的时间，如date -d “2019-9-9” +参数<br>参数(作用) : date –help 帮助信息  </p>
+</li>
+<li><p><strong>reboot</strong><br>重启系统，使用管理权限<br>sudo reboot : 管理员权限重启系统   </p>
+</li>
+<li><p><strong>poweroff</strong><br>关闭系统，使用管理员权限<br>sudo poweroff : 管理员权限关闭系统  </p>
+</li>
+<li><p><strong>wget</strong><br>在终端中下载网络文件，格式为<br>wget 参数 下载地址<br>-b : 后台下载模式<br>-p : 下载到制定目录<br>-t : 最大尝试次数<br>-c : 断电续传<br>-p : 下载页面内所有资源，包括图片，视频等<br>-r : 递归下载  </p>
+</li>
 <li><p><strong>ps</strong><br>查看系统中的进程状态，格式为<br>ps 参数<br>-a : 显示所有进程<br>-u : 用户以及其他详细信息<br>-x : 显示没有控制终端的进程<br>5种常见的进程状态:<br>R 运行<br>S 中断<br>D 不可中断<br>Z 僵死<br>T 停止  </p>
 </li>
 <li><p><strong>top</strong><br>动态地监控进程活动与系统负载等信息–强化版任务管理器  </p>
@@ -479,7 +483,7 @@
 <li><p><strong>killall</strong><br>终止某个指定名称的服务所对应的全部进程<br>killall 参数 进程名称  </p>
 </li>
 </ul>
-<h2 id="系统状态检测命令"><a href="#系统状态检测命令" class="headerlink" title="系统状态检测命令"></a>系统状态检测命令</h2><ul>
+<h1 id="系统状态检测命令"><a href="#系统状态检测命令" class="headerlink" title="系统状态检测命令"></a>系统状态检测命令</h1><ul>
 <li><p><strong>ifconfig</strong><br>获取网卡配置与网络状态等信息<br>ifconfig 网络设备 参数  </p>
 </li>
 <li><p><strong>usame</strong><br>查看系统内核与系统版本等信息<br>uname 参数  </p>
@@ -497,18 +501,57 @@
 <li><p><strong>sosreport</strong><br>收集系统配置及架构信息并输出诊断文档  </p>
 </li>
 </ul>
-<h3 id="工作目录切换命令"><a href="#工作目录切换命令" class="headerlink" title="工作目录切换命令"></a>工作目录切换命令</h3><ul>
+<h1 id="工作目录切换命令"><a href="#工作目录切换命令" class="headerlink" title="工作目录切换命令"></a>工作目录切换命令</h1><ul>
 <li><p><strong>pwd</strong><br>显示用户当前所在工作目录<br>pwd 选项  </p>
 </li>
-<li><p><strong>cd</strong><br>切换工作路径<br>cd 目录名称<br>cd ~    回到home目录<br>cd /    回到根目录下<br>cd ..   返回上一级目录  </p>
+<li><p><strong>cd</strong><br>切换工作路径<br>cd 目录名称<br>cd ~    回到home目录<br>cd /    回到根目录下<br>cd ..   返回上一级目录    </p>
 </li>
 <li><p><strong>ls</strong><br>显示目录中的文件信息<br>ls 选项 文件  </p>
 </li>
 </ul>
-<h2 id="文本文件编辑命令"><a href="#文本文件编辑命令" class="headerlink" title="文本文件编辑命令"></a>文本文件编辑命令</h2><ul>
+<h1 id="文本文件编辑命令"><a href="#文本文件编辑命令" class="headerlink" title="文本文件编辑命令"></a>文本文件编辑命令</h1><ul>
 <li><p><strong>cat</strong><br>查看内容较少的纯文本文件<br>cat 选项 文件  </p>
 </li>
-<li><p><strong>more</strong><br>查看内容较多的纯文本文件</p>
+<li><p><strong>more</strong><br>查看内容较多的纯文本文件<br>more 选项 文件</p>
+</li>
+<li><p><strong>head</strong><br>查看纯文本文档的前N行<br>head 选项 文本  </p>
+</li>
+<li><p><strong>tail</strong><br>查看文本的后N行<br>tail 选项 文本  </p>
+</li>
+<li><p><strong>tr</strong><br>替换文本的字符<br>tr 原始字符 替换字符  </p>
+<ul>
+<li><strong>wc</strong><br>统计文本行数、字节数、字数<br>wc 参数 文本  </li>
+</ul>
+</li>
+<li><p><strong>stat</strong><br>查看文件的具体存储信息和时间等信息等<br>stat 文件名称  </p>
+</li>
+<li><p><strong>cut</strong><br>按列提取文本字符<br>cut 参数 文本  </p>
+</li>
+<li><p><strong>diff</strong><br>比较多个文本的差异<br>diff 参数 文件  </p>
+</li>
+</ul>
+<h1 id="文件目录管理命令"><a href="#文件目录管理命令" class="headerlink" title="文件目录管理命令"></a>文件目录管理命令</h1><ul>
+<li><p><strong>touch</strong><br>创建空白文件或设置文件的时间<br>touch 参数 文件  </p>
+</li>
+<li><p><strong>mkdir</strong><br>创建空白的目录<br>mkdir 选项 文件  </p>
+</li>
+<li><p><strong>cp</strong><br>复制文件或目录<br>cp 选项 源文件 目标文件  </p>
+</li>
+<li><p><strong>mv</strong><br>剪切文件或者重命名<br>mv 选项 源文件 目标路径/目标文件名  </p>
+</li>
+<li><p><strong>rm</strong><br>删除文件或目录<br>rm 选项 文件  </p>
+</li>
+<li><p><strong>dd</strong><br>按照指定大小和个数的数据快来复制文件或转换文件<br>dd 参数  </p>
+</li>
+<li><p><strong>file</strong><br>查看文件的类型<br>file 文件名  </p>
+</li>
+</ul>
+<h1 id="打包压缩与搜索命令"><a href="#打包压缩与搜索命令" class="headerlink" title="打包压缩与搜索命令"></a>打包压缩与搜索命令</h1><ul>
+<li><p><strong>tar</strong><br>对文件进行打包压缩或者解压<br>tar 选项 文件  </p>
+</li>
+<li><p><strong>grep</strong><br>在文本中执行关键词搜索，并显示匹配的结果<br>grep 选项 文件  </p>
+</li>
+<li><p><strong>find</strong><br>按照指定条件来查找文件<br>find 查找路径 寻找条件 操作  </p>
 </li>
 </ul>
 
@@ -547,8 +590,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/02/折腾manjaro的记录-一/" rel="next" title="折腾manjaro的记录(一)">
-                <i class="fa fa-chevron-left"></i> 折腾manjaro的记录(一)
+              <a href="/2019/05/25/C-类的案例/" rel="next" title="C++类的案例">
+                <i class="fa fa-chevron-left"></i> C++类的案例
               </a>
             
           </div>
@@ -630,7 +673,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -710,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用系统工作命令"><span class="nav-number">1.</span> <span class="nav-text">常用系统工作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统状态检测命令"><span class="nav-number">1.1.</span> <span class="nav-text">系统状态检测命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作目录切换命令"><span class="nav-number">1.1.1.</span> <span class="nav-text">工作目录切换命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本文件编辑命令"><span class="nav-number">1.2.</span> <span class="nav-text">文本文件编辑命令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用系统工作命令"><span class="nav-number">1.</span> <span class="nav-text">常用系统工作命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统状态检测命令"><span class="nav-number">2.</span> <span class="nav-text">系统状态检测命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工作目录切换命令"><span class="nav-number">3.</span> <span class="nav-text">工作目录切换命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文本文件编辑命令"><span class="nav-number">4.</span> <span class="nav-text">文本文件编辑命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件目录管理命令"><span class="nav-number">5.</span> <span class="nav-text">文件目录管理命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打包压缩与搜索命令"><span class="nav-number">6.</span> <span class="nav-text">打包压缩与搜索命令</span></a></li></ol></div>
             
 
           </div>
