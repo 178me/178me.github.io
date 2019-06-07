@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="178me">
 <meta property="og:description" content="记录初学Linux所学习的知识">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-06T04:21:53.893Z">
+<meta property="og:updated_time" content="2019-06-07T06:58:38.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基本知识">
 <meta name="twitter:description" content="记录初学Linux所学习的知识">
@@ -226,23 +226,6 @@
     
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
         
@@ -405,7 +388,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-06 12:21:53" itemprop="dateModified" datetime="2019-06-06T12:21:53+08:00">2019-06-06</time>
+                <time title="修改时间：2019-06-07 14:58:38" itemprop="dateModified" datetime="2019-06-07T14:58:38+08:00">2019-06-07</time>
               
             
           </span>
@@ -458,7 +441,7 @@
 
       
         <p>记录初学Linux所学习的知识<br><a id="more"></a></p>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ol>
 <li>命令区分<code>大小写</code>  </li>
 <li>使用<code>Tab</code>来补全命令,按两下显示可补全的命令  </li>
 <li><code>上下键</code>可以查看历史命令  </li>
@@ -467,7 +450,7 @@
 <li><code>\</code>可以断开长命令，增强可读性  </li>
 <li>命令后加一个<code>&amp;</code>可使命令后台运行  </li>
 </ol>
-<h2 id="Linux文件系统目录结构"><a href="#Linux文件系统目录结构" class="headerlink" title="Linux文件系统目录结构"></a>Linux文件系统目录结构</h2><table>
+<h1 id="Linux文件系统目录结构"><a href="#Linux文件系统目录结构" class="headerlink" title="Linux文件系统目录结构"></a>Linux文件系统目录结构</h1><table>
 <thead>
 <tr>
 <th style="text-align:center">目录</th>
@@ -528,8 +511,50 @@
 <ul>
 <li>绝对命令与相对命令<br>绝对命令是从<code>/</code>开始的，也就是根目录;而相对路径是从当前目录开始  </li>
 </ul>
-<h2 id="Linux基本命令"><a href="#Linux基本命令" class="headerlink" title="Linux基本命令"></a>Linux基本命令</h2><p>大部分的命令可以参考我的<a href="https://178me.github.io/2019/06/02/shell-note1/#more" target="_blank" rel="noopener">另一篇文章</a>，下面补充一些其他的命令：  </p>
-<p>1. </p>
+<h1 id="Linux基本命令"><a href="#Linux基本命令" class="headerlink" title="Linux基本命令"></a>Linux基本命令</h1><p>大部分的命令可以参考我的<a href="https://178me.github.io/2019/06/02/shell-note1/#more" target="_blank" rel="noopener">另一篇文章</a>，下面补充一些命令：  </p>
+<ol>
+<li><p>rmkdir<br>删除空目录<br>rmkdir 参数选项 目录名称  </p>
+</li>
+<li><p>ln<br>为文件差差创建链接，链接分为硬链接和符号链接两种，默认的链接类型为硬链接<br>ln 参数选项 源文件或目录 目标文件或目录  </p>
+</li>
+<li><p>gzip/gunzip<br>压缩/解压缩文件，文件压缩类命令还有bzip2、bunzip2等<br>gizp/gunzip 参数选项 文件  </p>
+</li>
+<li><p>whereis<br>寻找命令的可执行文件所在的位置<br>whereis 参数 命令名称  </p>
+</li>
+<li><p>ss<br>导出socket的统计数据，它显示与netstat命令类似的信息，但能显示比其他工具更详情的TCP状态信息<br>ss 参数</p>
+</li>
+</ol>
+<h1 id="输入-输出重定向和管道命令符的使用"><a href="#输入-输出重定向和管道命令符的使用" class="headerlink" title="输入/输出重定向和管道命令符的使用"></a>输入/输出重定向和管道命令符的使用</h1><h2 id="输入-输出重定向"><a href="#输入-输出重定向" class="headerlink" title="输入/输出重定向"></a>输入/输出重定向</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">command &lt; file</td>
+<td style="text-align:center">将file文件作为command命令的标准输入</td>
+</tr>
+<tr>
+<td style="text-align:center">command &gt; file</td>
+<td style="text-align:center">将command命令的结果输出到file文件中，若有则覆盖，反之新建</td>
+</tr>
+<tr>
+<td style="text-align:center">command &gt;&gt; file</td>
+<td style="text-align:center">将command命令的结果输出到file文件中，若有则追加，反之则新建</td>
+</tr>
+<tr>
+<td style="text-align:center">command 2&gt; file</td>
+<td style="text-align:center">将command命令结果的错误信息输出到file文件中，若有则覆盖，反之新建</td>
+</tr>
+<tr>
+<td style="text-align:center">command &amp;&gt; file</td>
+<td style="text-align:center">将command命令结果的所有信息输出到file文件中，若有则覆盖，反之新建</td>
+</tr>
+</tbody>
+</table>
+<h2 id="管道命令符"><a href="#管道命令符" class="headerlink" title="管道命令符"></a>管道命令符</h2><p>将前一个命令的标准输出作为后一个命令的标准输入<br>命令1 | 命令2 </p>
 
       
     </div>
@@ -725,7 +750,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux文件系统目录结构"><span class="nav-number">2.</span> <span class="nav-text">Linux文件系统目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux基本命令"><span class="nav-number">3.</span> <span class="nav-text">Linux基本命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#特点"><span class="nav-number">1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux文件系统目录结构"><span class="nav-number">2.</span> <span class="nav-text">Linux文件系统目录结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux基本命令"><span class="nav-number">3.</span> <span class="nav-text">Linux基本命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入-输出重定向和管道命令符的使用"><span class="nav-number">4.</span> <span class="nav-text">输入/输出重定向和管道命令符的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入-输出重定向"><span class="nav-number">4.1.</span> <span class="nav-text">输入/输出重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管道命令符"><span class="nav-number">4.2.</span> <span class="nav-text">管道命令符</span></a></li></ol></li></ol></div>
             
 
           </div>
