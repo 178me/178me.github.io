@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="178me">
 <meta property="og:description" content="记录初学Linux所学习的知识">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-11T08:55:26.757Z">
+<meta property="og:updated_time" content="2019-06-11T13:03:48.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基本知识">
 <meta name="twitter:description" content="记录初学Linux所学习的知识">
@@ -388,7 +388,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-11 16:55:26" itemprop="dateModified" datetime="2019-06-11T16:55:26+08:00">2019-06-11</time>
+                <time title="修改时间：2019-06-11 21:03:48" itemprop="dateModified" datetime="2019-06-11T21:03:48+08:00">2019-06-11</time>
               
             
           </span>
@@ -513,12 +513,43 @@
 </ul>
 <h1 id="Linux基本命令"><a href="#Linux基本命令" class="headerlink" title="Linux基本命令"></a>Linux基本命令</h1><p>大部分的命令可以参考我的<a href="https://178me.github.io/2019/06/02/shell-note1/#more" target="_blank" rel="noopener">另一篇文章</a>，下面补充一些命令：  </p>
 <ol>
-<li><p>rmkdir<br>删除空目录<br>rmkdir 参数选项 目录名称  </p>
+<li><p>rmdir<br>删除空目录<br>rmdir 参数选项 目录名称  </p>
 </li>
 <li><p>ln<br>为文件创建链接，链接分为硬链接和符号链接两种，默认的链接类型为硬链接<br>ln 参数选项 源文件或目录 目标文件或目录  </p>
 </li>
-<li><p>gzip/gunzip<br>压缩/解压缩文件，文件压缩类命令还有bzip2、bunzip2等<br>gizp/gunzip 参数选项 文件  </p>
-</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:center">建立符号链接</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>gzip/gunzip<br>压缩/解压缩文件，文件压缩类命令还有bzip2、bunzip2等<br>gizp/gunzip 参数选项 文件  </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">递归压缩</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
 <li><p>whereis<br>寻找命令的可执行文件所在的位置<br>whereis 参数 命令名称  </p>
 </li>
 <li><p>ss<br>导出socket的统计数据，它显示与netstat命令类似的信息，但能显示比其他工具更详情的TCP状态信息<br>ss 参数</p>
