@@ -96,18 +96,21 @@
 
 
 
-  <meta name="description" content="函数的一些积累">
-<meta name="keywords" content="note">
+  <meta name="description" content="在写小程序时接触到的一个C标准函数库">
+<meta name="keywords" content="178me">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ note1">
-<meta property="og:url" content="http://yoursite.com/2019/06/04/C++ note1-1/index.html">
+<meta property="og:title" content="&lt;ctime&gt;的常用函数">
+<meta property="og:url" content="http://yoursite.com/2019/07/23/ctime-的常用函数/index.html">
 <meta property="og:site_name" content="178me">
-<meta property="og:description" content="函数的一些积累">
+<meta property="og:description" content="在写小程序时接触到的一个C标准函数库">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-04T09:25:21.416Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/23/ctime-的常用函数/Ctime.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/23/ctime-的常用函数/time格式符.png">
+<meta property="og:updated_time" content="2019-07-23T13:42:57.596Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ note1">
-<meta name="twitter:description" content="函数的一些积累">
+<meta name="twitter:title" content="&lt;ctime&gt;的常用函数">
+<meta name="twitter:description" content="在写小程序时接触到的一个C标准函数库">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/23/ctime-的常用函数/Ctime.png">
 
 
 
@@ -115,7 +118,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/04/C++ note1-1/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/23/ctime-的常用函数/">
 
 
 
@@ -125,7 +128,7 @@
   };
 </script>
 
-  <title>C++ note1 | 178me</title>
+  <title><ctime>的常用函数 | 178me</ctime></title>
   
 
 
@@ -328,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/C++ note1-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/23/ctime-的常用函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZeLinYang">
@@ -345,11 +348,11 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++ note1
+          <h1 class="post-title" itemprop="name headline"><ctime>的常用函数
 
               
             
-          </h1>
+          </ctime></h1>
         
 
         <div class="post-meta">
@@ -371,7 +374,7 @@
                 
               
 
-              <time title="创建时间：2019-06-04 16:47:09 / 修改时间：17:25:21" itemprop="dateCreated datePublished" datetime="2019-06-04T16:47:09+08:00">2019-06-04</time>
+              <time title="创建时间：2019-07-23 20:11:36 / 修改时间：21:42:57" itemprop="dateCreated datePublished" datetime="2019-07-23T20:11:36+08:00">2019-07-23</time>
             
 
             
@@ -428,19 +431,26 @@
       
 
       
-        <p>函数的一些积累</p>
-<a id="more"></a>  
-<h2 id="常用头文件"><a href="#常用头文件" class="headerlink" title="常用头文件"></a>常用头文件</h2><p><strong>#include <iostream> -&gt; 包含头文件:输入输出流</iostream></strong><br>详情了解cin请点击<a href="https://blog.csdn.net/weixin_41042404/article/details/80934191" target="_blank" rel="noopener">传送门</a>  </p>
-<p><strong>using namespace std -&gt; std命名空间</strong>  </p>
-<p><strong>#include <vector> -&gt; 包含向量的头文件</vector></strong></p>
-<p><strong>#include <algorithm> -&gt; 包含排序方法</algorithm></strong><br>sort() -&gt; 数组升序排序<br>reverse() -&gt; 数组逆序排序</p>
-<p><strong>#include <iterator> -&gt; 迭代器</iterator></strong>  </p>
-<p><strong>#include <iomanip> -&gt; 设置输出格式</iomanip></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setw(2)  //设置字符宽度为2个字节  </span><br><span class="line">setiosflags(ios::left)  //设置文字左对齐</span><br></pre></td></tr></table></figure></p>
-<p><strong>#include <string> -&gt; 字符串操作</string></strong>  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">string s;      //定义string对象s</span><br><span class="line">s.length()     //返回字符串长度，即字符个数</span><br><span class="line">s.empty()      //判读字符串是否为空串</span><br><span class="line">s.at(i)        //返回字符串的第i个字符</span><br><span class="line">s[i]           //等同于s.at(i)</span><br><span class="line">s.substr(int i,int j)     //获取从i到j的字符串</span><br><span class="line">其他方法</span><br><span class="line">getline(cin\cout,变量)    //输入或输出变量</span><br></pre></td></tr></table></figure>
-<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数  "></a>常用函数  </h2><blockquote>
-<p><strong><a href="https://blog.csdn.net/qq_22122811/article/details/52738029" target="_blank" rel="noopener">memset()</a></strong> -&gt; 数组初始化函数</p>
-</blockquote>
+        <p>在写小程序时接触到的一个C标准函数库<br><a id="more"></a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>表示时间的数据类型</p>
+<p><img src="/2019/07/23/ctime-的常用函数/Ctime.png" alt="常用函数简介"></p>
+<h1 id="tm-结构"><a href="#tm-结构" class="headerlink" title="tm 结构"></a>tm 结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//需要包含&lt;ctime&gt;头文件</span><br><span class="line">struct tm&#123;</span><br><span class="line">    int tm_sec;     //秒</span><br><span class="line">    int tm_min;     //分</span><br><span class="line">    int tm_hour;    //时</span><br><span class="line">    int tm_mday;    //每个月的第几天</span><br><span class="line">    int tm_mon;     //月份</span><br><span class="line">    int tm_year;    //1900年到现在的年份</span><br><span class="line">    int tm_wday;    //表示星期几，周日开始</span><br><span class="line">    int tm_yday;    //一年中的第几天</span><br><span class="line">    int tm_isdst;   //夏令时标识</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="time-t"><a href="#time-t" class="headerlink" title="time_t"></a>time_t</h1><p>实质上就是long数据类型的别名，另外clock_t也是一样。</p>
+<h1 id="time"><a href="#time" class="headerlink" title="time"></a>time</h1><p>得到从1970年1月1日 0：00到现在的秒数</p>
+<p>函数原型: time_t time(time_t *timer)</p>
+<h1 id="asctime"><a href="#asctime" class="headerlink" title="asctime()"></a>asctime()</h1><p>将tm结构的日期时间返回成一个字符串。字符串格式：星期,月,日,小时：分：秒,年</p>
+<p>函数原型: char<em> asctime(struct tm </em> ptr)  </p>
+<h1 id="ctime"><a href="#ctime" class="headerlink" title="ctime"></a>ctime</h1><p>将time_t类型时间戳返回成一个字符串。格式与上面相同</p>
+<p>函数原型: char <em>ctime(const time_t </em>time)</p>
+<h1 id="strftime"><a href="#strftime" class="headerlink" title="strftime()"></a>strftime()</h1><p>将tm结构转换为自定义格式的字符串。</p>
+<p><img src="/2019/07/23/ctime-的常用函数/time格式符.png" alt="时间格式转换符"></p>
+<p>函数原型：size_t strftime(char<em> s, size_t n, const char</em> format, const struct tm* tptr)</p>
+<h1 id="localtime"><a href="#localtime" class="headerlink" title="localtime()"></a>localtime()</h1><p>用本地时区来表示时间  </p>
+<p>函数原型：struct tm<em> localtime(const time_t</em> timer)</p>
+<h1 id="gmtime"><a href="#gmtime" class="headerlink" title="gmtime()"></a>gmtime()</h1><p>标准的UTC时间，也就是世界时钟  </p>
+<p>函数原型：struct tm<em> gmtime(const time_t</em> timer)  </p>
+<h1 id="mktime"><a href="#mktime" class="headerlink" title="mktime()"></a>mktime()</h1><p>将tm结构转换为time_t类型  </p>
+<p>函数原型：time_t mktime(struct tm* ptm)  </p>
 
       
     </div>
@@ -462,12 +472,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/note/" rel="tag"># note</a>
-          
-        </div>
-      
 
       
       
@@ -477,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/04/C++ note2/" rel="next" title="C++ note2">
-                <i class="fa fa-chevron-left"></i> C++ note2
+              <a href="/2019/07/09/暑假计划/" rel="next" title="暑假计划">
+                <i class="fa fa-chevron-left"></i> 暑假计划
               </a>
             
           </div>
@@ -486,10 +490,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/04/C++ note3/" rel="prev" title="C++ note3">
-                C++ note3 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -638,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用头文件"><span class="nav-number">1.</span> <span class="nav-text">常用头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用函数"><span class="nav-number">2.</span> <span class="nav-text">常用函数  </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tm-结构"><span class="nav-number">2.</span> <span class="nav-text">tm 结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#time-t"><span class="nav-number">3.</span> <span class="nav-text">time_t</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#time"><span class="nav-number">4.</span> <span class="nav-text">time</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#asctime"><span class="nav-number">5.</span> <span class="nav-text">asctime()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ctime"><span class="nav-number">6.</span> <span class="nav-text">ctime</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#strftime"><span class="nav-number">7.</span> <span class="nav-text">strftime()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#localtime"><span class="nav-number">8.</span> <span class="nav-text">localtime()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gmtime"><span class="nav-number">9.</span> <span class="nav-text">gmtime()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mktime"><span class="nav-number">10.</span> <span class="nav-text">mktime()</span></a></li></ol></div>
             
 
           </div>
