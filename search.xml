@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Qt_快速入门(二)]]></title>
+    <url>%2F2019%2F08%2F03%2FQt-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-%E4%BA%8C%2F</url>
+    <content type="text"><![CDATA[本节讲述Qt中的一些窗口控件如何使用代码创建 菜单栏头文件： #include &lt;QMenuBar&gt; 创建方法： QMenuBar * MenuBar = menuBar() 这种方法创建的菜单栏需要使用setMenuBar方法设置到窗口中,菜单栏只能有一个 状态栏头文件：#include &lt;QStatusBar&gt; 创建方法： QStatusBar * status = new QStatusBar(this) 状态栏也只能 工具栏头文件： #include &lt;QToolBar&gt; 创建方法： QToolBar * toolbar = new QToolBar(this) 标签头文件： #include &lt;QLabel&gt; 创建方法： QLabel * label = new QLabel(this) 按钮头文件: #include &lt;QPushButton&gt; 创建方法: QPushButton * btn = new QPushButton(&quot;test&quot;,this) 按钮要使用new的方式创建在堆区中，否则就会一闪而过。这里使用了两个参数构造函数，第一个是按钮的名称，第二个是要依赖的窗口，因为代码是在Qwidget类中写的，所以直接使用this。 浮动窗口头文件：#include &lt;QDockWidget&gt; 创建方法： QDockWidget * dock = new QDockWidget(&quot;浮动窗口&quot;,this) 文本编辑器头文件： #include &lt;QTextEdit&gt; 创建方法： QTextEdit * edit = new QTextEdit(this)]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Qt_快速入门(一)]]></title>
+    <url>%2F2019%2F08%2F03%2FQt-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-%E4%B8%80%2F</url>
+    <content type="text"><![CDATA[本节讲述qt一些基本知识 Qt的简介Qt是一个跨平台的C++开发库，主要用来开发图形用户应用程序。 Qt是纯C++开发的，所以建议有C++的基础再来学习。 Qt的优点非常多，比如说跨平台，接口丰富等等。 Qt的成功案例：Linux KDE桌面就是用Qt开发的。 Qt开发环境的选择个人使用的是Qt creator。 manjaro Linux的下载方法就是一条简单的命令 sudo pacman -S qtcreator 下载完成之后，可以打开软件修改中文界面（默认是英语） Tools -&gt; Options -&gt; Environment -&gt; Interface 里的Language 修改成Chinese(china) 不过我的系统在这里有一个小问题，就是选项中没有中文语言，可以用一条命令解决 sudo pacman -S qt5-translations 之后就可以正常选择了 Qt的第一个程序新建项目 -&gt; 选择Qt Widgets App… -&gt;Location: 可以修改项目名称和路径 -&gt;Kits: 构建套件，在实际开发可以选择，我们直接下一步就行了 -&gt;Details: 可以选择一些基类和界面文件并设置名称，这里我们选择Qwidget，然后把界面文件勾选掉 -&gt; 汇总: 添加版本控制，点击完成即可。 完成之后会生成一些文件 pro文件 、main.cpp文件和 你创建的类的头文件和实现文件 .pro文件：这个文件可以说是配置文件，可以添加一些模块 main.cpp会自动生成一些代码，直接运行就可以弹出一个窗口 1234567891011121314151617#include &quot;widget.h&quot;//包含我们自己新建的类的头文件#include &lt;QApplication&gt;//包含一个应用程序类的头文件int main(int argc, char *argv[])//main程序入口 argc命令行变量的数量 argv命令行变量的数组&#123; QApplication a(argc, argv); //实例化应用程序对象，在Qt中，有且只有一个 Widget w; //实例化一个窗口对象 w.show(); //调用方法显示窗口 return a.exec(); //防止窗口一闪而过，进入消息循环&#125;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[《ctime》的常用函数]]></title>
     <url>%2F2019%2F07%2F23%2Fctime-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%2F</url>
     <content type="text"><![CDATA[在写小程序时接触到的一个C标准函数库 简介表示时间的数据类型 tm 结构123456789101112//需要包含&lt;ctime&gt;头文件struct tm&#123; int tm_sec; //秒 int tm_min; //分 int tm_hour; //时 int tm_mday; //每个月的第几天 int tm_mon; //月份 int tm_year; //1900年到现在的年份 int tm_wday; //表示星期几，周日开始 int tm_yday; //一年中的第几天 int tm_isdst; //夏令时标识&#125;; time_t实质上就是long数据类型的别名，另外clock_t也是一样。 time得到从1970年1月1日 0：00到现在的秒数 函数原型: time_t time(time_t *timer) asctime()将tm结构的日期时间返回成一个字符串。字符串格式：星期,月,日,小时：分：秒,年 函数原型: char asctime(struct tm ptr) ctime将time_t类型时间戳返回成一个字符串。格式与上面相同 函数原型: char ctime(const time_t time) strftime()将tm结构转换为自定义格式的字符串。 函数原型：size_t strftime(char s, size_t n, const char format, const struct tm* tptr) localtime()用本地时区来表示时间 函数原型：struct tm localtime(const time_t timer) gmtime()标准的UTC时间，也就是世界时钟 函数原型：struct tm gmtime(const time_t timer) mktime()将tm结构转换为time_t类型 函数原型：time_t mktime(struct tm* ptm)]]></content>
