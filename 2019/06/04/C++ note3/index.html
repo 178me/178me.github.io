@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="178me">
 <meta property="og:description" content="关于面向对象编程的笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-11T12:51:01.860Z">
+<meta property="og:updated_time" content="2019-09-08T07:28:06.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ note3">
 <meta name="twitter:description" content="关于面向对象编程的笔记">
@@ -388,7 +388,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-11 20:51:01" itemprop="dateModified" datetime="2019-06-11T20:51:01+08:00">2019-06-11</time>
+                <time title="修改时间：2019-09-08 15:28:06" itemprop="dateModified" datetime="2019-09-08T15:28:06+08:00">2019-09-08</time>
               
             
           </span>
@@ -546,6 +546,75 @@
 <p> <strong>类的讨论</strong>  </p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">· 类与结构</span><br><span class="line">C++中提供结构和类。在数据成员上，它们唯一的差别在于</span><br><span class="line">：结构成员的默认访问控制为public，类的默认访问控制</span><br><span class="line">为private。</span><br><span class="line">class是一个全新的概念，所以人们更愿意接受class是真</span><br><span class="line">正的面向对象概念。而对于struct，人们更愿意用来描述</span><br><span class="line">那些没有行为或者行为能力很弱的数据结构体。</span><br><span class="line">· 抽象性</span><br><span class="line">在软件开发的分析、设计时对具体问题进行归纳、概括，</span><br><span class="line">并将这一类对象的公共特性加以条理化和严格描述，它主</span><br><span class="line">张集中思想和精力，考虑关键、主要、实质性的问题，去</span><br><span class="line">掉非主要的部分，便于开发人员对整个问题准确地认识。</span><br><span class="line">为具体的对象定义一个类的过程就是抽象。</span><br><span class="line">· 封装性</span><br><span class="line">保证程序员用正确的方式操作对象，并将一些操作细节隐</span><br><span class="line">藏起来。主要体现如下方面:</span><br><span class="line">--- 保护私有数据:不允许外部程序直接访问私有的数据</span><br><span class="line">--- 隐藏了操作细节:提供公用成员函数提供外部调用</span><br><span class="line">根据这两个方面,我们可以举一个例子来说明:</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A &#123;</span><br><span class="line">	/**</span><br><span class="line">	 *声明一个A类，包含两个数据成员并封装成4个成员函数</span><br><span class="line">	 *这里使用this指针加深印象</span><br><span class="line">	 **/</span><br><span class="line">	string _name;</span><br><span class="line">	string _sex;</span><br><span class="line">public:</span><br><span class="line">	void setname(string name) &#123; </span><br><span class="line">		this -&gt;_name = name; </span><br><span class="line">	&#125;</span><br><span class="line">	void setsex(string sex) &#123; </span><br><span class="line">		this-&gt;_sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line">	string getname() &#123; return this -&gt;_name; &#125;</span><br><span class="line">	string getsex() &#123; return this -&gt;_sex; &#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main() &#123;</span><br><span class="line">	/**</span><br><span class="line">	 *使用指针的方法实例化A的一个对象</span><br><span class="line">	 *定义两个string临时变量</span><br><span class="line">	 *调用公共的数据成员封装函数进行赋值和输出</span><br><span class="line">	 **/</span><br><span class="line">	A * a1 = new A();</span><br><span class="line">	string temp1,temp2;</span><br><span class="line">	cout &lt;&lt; &quot;请输入你的姓名&quot;;</span><br><span class="line">	cin &gt;&gt; temp1;</span><br><span class="line">	a1-&gt;setname(temp1);</span><br><span class="line">	cout &lt;&lt; &quot;请输入你的性别&quot;;</span><br><span class="line">	cin &gt;&gt; temp2;</span><br><span class="line">	a1-&gt;setsex(temp2);</span><br><span class="line">	cout &lt;&lt; &quot;姓名:&quot; &lt;&lt; a1-&gt;getname() &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; &quot;性别:&quot; &lt;&lt; a1-&gt;getsex() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">程序员的责任就是封装复杂的数据和操作，以简单明了的</span><br><span class="line">共有函数的方式为外部程序提供对象操作接口</span><br></pre></td></tr></table></figure>
+<h1 id="类的封装性"><a href="#类的封装性" class="headerlink" title="类的封装性"></a>类的封装性</h1><p>封装性保证程序员通过正确的方式操作对象，并将操作的细节隐藏起来。</p>
+<ul>
+<li><p>保护私有数据：不允许外部程序访问私有的数据  </p>
+</li>
+<li><p>隐藏了操作细节：提供公共方法，以供外部程序调用  </p>
+</li>
+</ul>
+<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol>
+<li>类的组合  </li>
+</ol>
+<p>类的数据成员可以是基本类型、复合类型、或者是一个自定义类的对象。</p>
+<ol start="2">
+<li>类的声明  </li>
+</ol>
+<p>要在调用类之前先声明这个类</p>
+<h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><p>是一个有特殊的成员函数，定义类的实例被隐式调用</p>
+<ul>
+<li><p>函数名与类名一致</p>
+</li>
+<li><p>与正常的函数规则一致，可重载但不能有返回值例如，可以带有参数，默认值等</p>
+</li>
+<li><p>一般用来初始化数据 </p>
+</li>
+<li><p>没有定义构造函数时C++会自动创建默认构造函数  </p>
+</li>
+</ul>
+<h2 id="成员初始值列表"><a href="#成员初始值列表" class="headerlink" title="成员初始值列表"></a>成员初始值列表</h2><p>构造函数的特有的初始化方式。用以指定在调用该构造函数是完成的初始化序列</p>
+<p>以：引起，多个值以，间隔;初始化语句写成()形式</p>
+<h1 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h1><p>是与构造函数相反的一个特殊函数，销毁对象或某个对象离开作用域时会调用析构函数。</p>
+<ul>
+<li><p>以～引起，函数名与类名一致  </p>
+</li>
+<li><p>没有返回值，参数列表为空  </p>
+</li>
+<li><p>一般用来销毁对象  </p>
+</li>
+<li><p>没有定义时会自动创建默认析构函数  </p>
+</li>
+</ul>
+<h1 id="转换构造函数"><a href="#转换构造函数" class="headerlink" title="转换构造函数"></a>转换构造函数</h1><p>当某个构造函数只有一个参数，而该参数又不是本类的const引用，称为转换构造函数  </p>
+<h2 id="explicit"><a href="#explicit" class="headerlink" title="explicit"></a>explicit</h2><p>不允许显式调用函数  </p>
+<h1 id="拷贝构造函数"><a href="#拷贝构造函数" class="headerlink" title="拷贝构造函数"></a>拷贝构造函数</h1><p>拷贝构造函数即复制一个对象。 </p>
+<h1 id="操作符重载"><a href="#操作符重载" class="headerlink" title="操作符重载"></a>操作符重载</h1><p>为类定义操作符函数  </p>
+<p>例：如果一个对象将 ～操作符 重载，则～a等同于a.operator~()</p>
+<h2 id="注意点-1"><a href="#注意点-1" class="headerlink" title="注意点"></a>注意点</h2><ol>
+<li><p>操作符重载函数可以有形参  </p>
+</li>
+<li><p>一元操作符不能混当二元操作符使用，同理，二元也一样。</p>
+</li>
+<li><p>对于查找顺序来说，编译器会先查找对象操作符的重载，再去查找全局操作符的重载</p>
+</li>
+<li><p>类型转换：将对象转换成对应的类型，如：Actor::operator string()</p>
+</li>
+</ol>
+<h1 id="const"><a href="#const" class="headerlink" title="const"></a>const</h1><p>用来指示某个变量不能被修改  </p>
+<p>如果在对象实例前加上const，那么你就只能使用const类型的成员函数  </p>
+<h1 id="mutable"><a href="#mutable" class="headerlink" title="mutable"></a>mutable</h1><p>用来修饰数据成员，表示可变的。   </p>
+<p>加了const的函数遇到使用mutable数据成员的修改会忽略它。  </p>
+<h1 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h1><p>当一个类或一个函数声明为另一个类的朋友时，它就可以访问该类的私有成员</p>
+<h2 id="注意点-2"><a href="#注意点-2" class="headerlink" title="注意点"></a>注意点</h2><ol>
+<li><p>使用友元在前面加上friend  </p>
+</li>
+<li><p>注意声明的顺序  </p>
+</li>
+<li><p>如果A类声明B类为友元，那么B类可以访问A类的私有数据成员，A类则不能访问B类  </p>
+</li>
+<li><p>友元在一定程度上破坏了类的封装性，尽量不要过多使用  </p>
+</li>
+</ol>
 
       
     </div>
@@ -665,7 +734,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -743,7 +812,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类的封装性"><span class="nav-number">2.</span> <span class="nav-text">类的封装性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意点"><span class="nav-number">2.1.</span> <span class="nav-text">注意点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数"><span class="nav-number">3.</span> <span class="nav-text">构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#成员初始值列表"><span class="nav-number">3.1.</span> <span class="nav-text">成员初始值列表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#析构函数"><span class="nav-number">4.</span> <span class="nav-text">析构函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转换构造函数"><span class="nav-number">5.</span> <span class="nav-text">转换构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#explicit"><span class="nav-number">5.1.</span> <span class="nav-text">explicit</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拷贝构造函数"><span class="nav-number">6.</span> <span class="nav-text">拷贝构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作符重载"><span class="nav-number">7.</span> <span class="nav-text">操作符重载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意点-1"><span class="nav-number">7.1.</span> <span class="nav-text">注意点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const"><span class="nav-number">8.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mutable"><span class="nav-number">9.</span> <span class="nav-text">mutable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友元"><span class="nav-number">10.</span> <span class="nav-text">友元</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意点-2"><span class="nav-number">10.1.</span> <span class="nav-text">注意点</span></a></li></ol></li></ol></div>
             
 
           </div>
