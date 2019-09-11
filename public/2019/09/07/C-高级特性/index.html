@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="C++中的高级特性">
+<meta name="keywords" content="178me">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++_高级特性">
+<meta property="og:url" content="http://yoursite.com/2019/09/07/C-高级特性/index.html">
+<meta property="og:site_name" content="178me">
+<meta property="og:description" content="C++中的高级特性">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-11T02:04:02.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++_高级特性">
+<meta name="twitter:description" content="C++中的高级特性">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/09/07/C-高级特性/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>C++_高级特性 | 178me</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">178me</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">为了开发而努力开发</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/07/C-高级特性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZeLinYang">
+      <meta itemprop="description" content="刚踏入编程的小萌新一枚">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="178me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++_高级特性
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-07 19:16:38" itemprop="dateCreated datePublished" datetime="2019-09-07T19:16:38+08:00">2019-09-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-11 10:04:02" itemprop="dateModified" datetime="2019-09-11T10:04:02+08:00">2019-09-11</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>C++中的高级特性</p>
+<a id="more"></a>
+<h1 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h1><p>继承可以理解为父子，子类继承父类的的基因，父类又称作基类，子类又称作派生类  </p>
+<p>派生类的写法：class A : B ;  </p>
+<h2 id="内存中的派生类"><a href="#内存中的派生类" class="headerlink" title="内存中的派生类"></a>内存中的派生类</h2><p>在内存中派生类实际上是基类的内容加上自己的内容。  </p>
+<h2 id="protected"><a href="#protected" class="headerlink" title="protected"></a>protected</h2><p>派生类可以访问到基类的保护成员，但不可以访问私有成员  </p>
+<h2 id="基类访问控制"><a href="#基类访问控制" class="headerlink" title="基类访问控制"></a>基类访问控制</h2><p>在定义派生类的基类列表时，可以指定对基类访问控制的类型，即继承方式。</p>
+<ol>
+<li><p>公有继承时：原基类的非私有成员访问属性在派生类中不变</p>
+</li>
+<li><p>私有继承时：原基类的非私有成员访问属性在派生类中变为私有成员  </p>
+</li>
+<li><p>保护继承时：原基类的非私有成员访问属性在派生类中变为保护成员</p>
+</li>
+</ol>
+<h2 id="构造与析构"><a href="#构造与析构" class="headerlink" title="构造与析构"></a>构造与析构</h2><p>派生类不会继承基类的构造函数和析构函数  </p>
+<h2 id="基类的初始化"><a href="#基类的初始化" class="headerlink" title="基类的初始化"></a>基类的初始化</h2><p>派生类可以在构造函数中使用初始值列表对基类进行初始化  </p>
+<h2 id="默认构造函数"><a href="#默认构造函数" class="headerlink" title="默认构造函数"></a>默认构造函数</h2><p>隐式的默认构造函数创建有两个条件  </p>
+<ol>
+<li><p>用户没有为该类创建任何构造函数  </p>
+</li>
+<li><p>如果为派生类，其基类必须要有默认构造函数，否则不知道如何初始化基类  </p>
+</li>
+</ol>
+<h2 id="派生类的析构"><a href="#派生类的析构" class="headerlink" title="派生类的析构"></a>派生类的析构</h2><p>析构的顺序为：基类的构造在派生类之前，析构在派生类之后。</p>
+<h2 id="名字隐藏"><a href="#名字隐藏" class="headerlink" title="名字隐藏"></a>名字隐藏</h2><p>实质上就是跟探讨作用域的问题一样  </p>
+<p>派生类就如同局部，基类为全局;如果一个派生类和基类有一个数据成员一样，那么编译器会先找到派生类的数据成员，并且使用他。如若在派生类找不到才会向基类再去寻找。  </p>
+<h1 id="类的多态性"><a href="#类的多态性" class="headerlink" title="类的多态性"></a>类的多态性</h1><p>继承与虚函数构成了多态性。</p>
+<h2 id="向上转换"><a href="#向上转换" class="headerlink" title="向上转换"></a>向上转换</h2><p>派生类可以转换为基类，但是基类不可以转换成派生类 </p>
+<h2 id="向下转换"><a href="#向下转换" class="headerlink" title="向下转换"></a>向下转换</h2><p>有时候，我们知道当前指针指向的对象为什么类型，可以使用强制转换完成向下转换  </p>
+<p>向下转换必须显式的向编译器提出，向下转换具有一定的风险，如果给定的并非是一个派生类的对象，那么，将他进行强制转换，是不可预料的。  </p>
+<h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><p>关键字virtual用以声明基类的某个函数为虚函数  </p>
+<p>我们通常把基类虚函数的实现称作“覆盖”。  </p>
+<h2 id="虚析构函数"><a href="#虚析构函数" class="headerlink" title="虚析构函数"></a>虚析构函数</h2><p>如果基类的虚析构函数不是虚函数，针对基类的析构操作将无法引起派生类的析构。  </p>
+<p>保险起见，一般建议将基类的析构函数声明为虚的</p>
+<h2 id="纯虚函数"><a href="#纯虚函数" class="headerlink" title="纯虚函数"></a>纯虚函数</h2><p>纯虚函数是一种特殊的虚函数，它没有函数的实现。  </p>
+<p>virtual void say() = 0;  </p>
+<p>注意区分函数体为空的情形，不可再为虚函数定义函数体  </p>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>具有纯虚函数的类即为抽象类。抽象类不能被实例化  </p>
+<p>抽象类一般用来设计一套统一的接口，派生类必须实现其中的虚函数，才能被实例化。  </p>
+<h2 id="多级继承"><a href="#多级继承" class="headerlink" title="多级继承"></a>多级继承</h2><p>派生类的继承可以是任何一个合法的类，也可以继承于某一个派生类。  </p>
+<h2 id="虚函数的多次填充"><a href="#虚函数的多次填充" class="headerlink" title="虚函数的多次填充"></a>虚函数的多次填充</h2><p>虚函数的特性是自动遗传的，也就是说，在基类定义了某个虚函数，不管派生类覆盖不覆盖这个函数，其属性仍然是虚的，那么，虚函数可以随着多级继承而被多次填充  </p>
+<h2 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h2><p>派生类可以继承多个基类  </p>
+<h2 id="多继承带来的问题"><a href="#多继承带来的问题" class="headerlink" title="多继承带来的问题"></a>多继承带来的问题</h2><p>二义性和内存冗余即可能会在派生类的对象同时保存基类的多份复制  </p>
+<h2 id="虚拟继承"><a href="#虚拟继承" class="headerlink" title="虚拟继承"></a>虚拟继承</h2><p>可以实现多个派生类之间共同享受某个相同的基类  </p>
+<p>在要继承的基类名之前加virtual  </p>
+<p>在UML使用虚线表示虚拟继承  </p>
+<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><p>函数模板即带有参数的函数</p>
+<p>模板的参数与函数的参数相似与不同  </p>
+<ol>
+<li><p>函数的参数列表由()引起,模板的参数列表由&lt;&gt;括起</p>
+</li>
+<li><p>函数的参数为对象，模板的参数大部分为类型，例如：typename T。T的类型必须是typename或者class。  </p>
+</li>
+<li><p>函数的参数是0～N个，而模板的参数是1～N个  </p>
+</li>
+<li><p>函数模板也可以被重载  </p>
+</li>
+<li><p>使用模板时，可以不指定模板的参数。编译器根据实际调用正确猜测出模板参数的值  </p>
+</li>
+<li><p>模板的参数不能具有默认值，但是类模板中模板参数可以有默认值  </p>
+</li>
+</ol>
+<h2 id="函数模板的实例化"><a href="#函数模板的实例化" class="headerlink" title="函数模板的实例化"></a>函数模板的实例化</h2><p>函数模板必须被实例化才能被正常调用 </p>
+<p>注意函数的实例化可以隐式完成  </p>
+<h2 id="函数模板的重载"><a href="#函数模板的重载" class="headerlink" title="函数模板的重载"></a>函数模板的重载</h2><p>函数模板可以重载  </p>
+<p>普通的函数与模板函数同名同参数时，C++会优先选择普通函数  </p>
+<h2 id="函数模板的特化"><a href="#函数模板的特化" class="headerlink" title="函数模板的特化"></a>函数模板的特化</h2><p>可以针对某个类型进行特化（？特殊化）。特化的函数以“template&lt;&gt;”开头  </p>
+<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板的成员函数定义之前必须包含一段模板参数的声明  </p>
+<p>类模板可以声明多个参数  </p>
+<p>可以具有默认参数类型  </p>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><h2 id="抛出异常"><a href="#抛出异常" class="headerlink" title="抛出异常"></a>抛出异常</h2><p>使用异常机制，就是在错误的地方，抛出一个异常变量。  </p>
+<p>throw关键字用以抛出一个异常，这个异常可以是任何类型的对象。  </p>
+<h2 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h2><p>可以使用try…catch捕获抛出的异常。try中文含义为尝试，catch为捕获，意思就是先尝试执行一段代码，如果捕获到异常，则执行catch的代码。</p>
+<h2 id="捕获不同类型的异常"><a href="#捕获不同类型的异常" class="headerlink" title="捕获不同类型的异常"></a>捕获不同类型的异常</h2><p>异常可以由程序员自定义异常类。  </p>
+<h2 id="捕获所有异常"><a href="#捕获所有异常" class="headerlink" title="捕获所有异常"></a>捕获所有异常</h2><p>可以使用带有省略号的catch语句块，它用以捕获所有未经捕获的异常。  </p>
+<h2 id="在catch块抛出异常"><a href="#在catch块抛出异常" class="headerlink" title="在catch块抛出异常"></a>在catch块抛出异常</h2><p>我们可以在catch语句块中再次抛出异常  </p>
+<h2 id="未经捕获的异常"><a href="#未经捕获的异常" class="headerlink" title="未经捕获的异常"></a>未经捕获的异常</h2><p>异常不一定都被捕获  </p>
+<p>如果一个异常没有被捕获，C++不知道怎么处理这个异常的情况下。它将会调用temiante()函数，默认情况下，该函数只会简单的调用abort()函数，用以中断程序的执行。  </p>
+<h2 id="定制terminate-的行为"><a href="#定制terminate-的行为" class="headerlink" title="定制terminate()的行为"></a>定制terminate()的行为</h2><p>可以认为terminate()函数使用一个全局的函数指针进行调用  </p>
+<p>因此，可以使用set_terminate()函数来指定一个新的处理函数。  </p>
+<h2 id="对抛出异常的声明"><a href="#对抛出异常的声明" class="headerlink" title="对抛出异常的声明"></a>对抛出异常的声明</h2><p>当声明函数的时候，可以同时指明该函数可能会抛出的异常  </p>
+<p>对抛出异常作出声明不是强制性的</p>
+<ol>
+<li><p>如果一个函数可能抛出异常，不一定要使用throw抛出异常，反之一样  </p>
+</li>
+<li><p>声明的异常不必与实际抛出的类型相符  </p>
+</li>
+<li><p>在catch语句中，其捕获的异常不必与函数声明的异常中的类型相符  </p>
+</li>
+</ol>
+<p>对抛出的异常作出声明，只是为了指导意义，为了让使用者知道调用此函数可能会带来的风险。  </p>
+<h1 id="名字空间与域"><a href="#名字空间与域" class="headerlink" title="名字空间与域"></a>名字空间与域</h1><p>用以解决名字冲突问题  </p>
+<h2 id="名字空间定义"><a href="#名字空间定义" class="headerlink" title="名字空间定义"></a>名字空间定义</h2><p>可以定义一个名字空间，将自己的类、和对象括起来。  </p>
+<h2 id="using声明"><a href="#using声明" class="headerlink" title="using声明"></a>using声明</h2><p>using声明告诉编译器尝试从名字空间查找对象  </p>
+<h2 id="using指令"><a href="#using指令" class="headerlink" title="using指令"></a>using指令</h2><p>可以直接声明待使用的名字空间的成员名</p>
+<h2 id="名字空间的别名"><a href="#名字空间的别名" class="headerlink" title="名字空间的别名"></a>名字空间的别名</h2><p>可以使用namespace为已定义的名字空间指定别名  </p>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>C++支持三种作用域  </p>
+<h2 id="局部作用域"><a href="#局部作用域" class="headerlink" title="局部作用域"></a>局部作用域</h2><ol>
+<li><p>每段语句块都包含一个局部的作用域，在语句块声明的对象只在本语句块内部其作用  </p>
+</li>
+<li><p>局部变量的存储类型  </p>
+</li>
+</ol>
+<p>局部变量可以具有不同的存储类型  </p>
+<ul>
+<li><p>自动存储类型：当程序执行超出当前作用域，变量自动销毁  </p>
+</li>
+<li><p>寄存器存储类型：将变量存储在寄存器中进行存取，可以提高函数的执行程度，但是编译器有可能会选择其他方式处理  </p>
+</li>
+<li><p>静态存储类型：超出局部作用域，静态局部变量不会被销毁  </p>
+</li>
+</ul>
+<h2 id="名字空间域"><a href="#名字空间域" class="headerlink" title="名字空间域"></a>名字空间域</h2><ol>
+<li><p>由名字空间所指定的作用域  </p>
+</li>
+<li><p>外部存储类型：extern，可以在a源文件声明b源文件的对象  </p>
+</li>
+<li><p>最外成的空间即全局域  </p>
+</li>
+</ol>
+<h2 id="类域"><a href="#类域" class="headerlink" title="类域"></a>类域</h2><p>类域包括定义体和所有的成员函数体  </p>
+<p>类可以具有static数据成员  </p>
+<p>作用域、语句块、名字空间、类都可以嵌套  </p>
+<p>语句块中定义的类为内部类  </p>
+<h2 id="对象的生命周期"><a href="#对象的生命周期" class="headerlink" title="对象的生命周期"></a>对象的生命周期</h2><p>生命周期与作用域有某种关系，如：一段语句块中定义的自动对象在离开当前局部作用域的时候，总会被销毁。  </p>
+<h1 id="C-标准库"><a href="#C-标准库" class="headerlink" title="C++标准库"></a>C++标准库</h1><h2 id="字符串库"><a href="#字符串库" class="headerlink" title="字符串库"></a>字符串库<string></string></h2><ol>
+<li>字符串的构造和赋值  </li>
+</ol>
+<p>由多个重复的字符构成的string：string s(8,’f’)  </p>
+<ol start="2">
+<li>字符串连接  </li>
+</ol>
+<p>可以使用+号将两个字符串连接起来  </p>
+<ol start="3">
+<li><p>字符串可以用运算符直接比较  </p>
+</li>
+<li><p>字符串的下标  </p>
+</li>
+</ol>
+<p>可以通过字符串的下标来访问字符串中的某个字符  </p>
+<p>通过length()获取字符串的长度  </p>
+<ol start="5">
+<li><p>子串：字符串中的一部分  </p>
+</li>
+<li><p>字符串的查找  </p>
+</li>
+</ol>
+<p>可以从字符串中查找某个字串，并返回字串所在的位置，使用是string类的find()方法，查找失败返回-1  </p>
+<ol start="7">
+<li><p>string与C-style字符串：可以通过c_str()函数获取string的字符数组，c_str返回的是一个const的字符指针，指向string内部的实际存储地址，值会随着string的改变。  </p>
+</li>
+<li><p>空字符串：不包含任何内容，使用clear()清空字符串，empty()判断字符串是否为空  </p>
+</li>
+</ol>
+<h2 id="复数类"><a href="#复数类" class="headerlink" title="复数类"></a>复数类<complex></complex></h2><ol>
+<li>复数的构造  </li>
+</ol>
+<p>complex是一个类模板，它可以采用float、double、long double 3种类型进行定制，如：complex<double> c(1,2)  </double></p>
+<ol start="2">
+<li><p>复数可以进行四则运算  </p>
+</li>
+<li><p>复数的操作函数  </p>
+</li>
+</ol>
+<p>real()返回复数的实部  </p>
+<p>imag()返回复数的虚部  </p>
+<p>abs(x)返回复数x的模  </p>
+<p>arg(x)返回复数x的相角  </p>
+<p>conj(x)返回复数x的共軛复数  </p>
+<p>narm(x)返回复数x的模的平方  </p>
+<h2 id="异常类"><a href="#异常类" class="headerlink" title="异常类"></a>异常类<stdexcept></stdexcept></h2><p>包含了C++中各种各样的异常  </p>
+<h1 id="C标准库"><a href="#C标准库" class="headerlink" title="C标准库"></a>C标准库</h1><h2 id="assert宏"><a href="#assert宏" class="headerlink" title="assert宏"></a>assert宏</h2><p>在<cassert>中定义一个很有用的宏：assert()用以调试代码  </cassert></p>
+<p>如果想取消掉assert()的功能，可以在包含<cassert>头文件之前定义NDEBUG宏：  </cassert></p>
+<h2 id="类型函数"><a href="#类型函数" class="headerlink" title="类型函数"></a>类型函数</h2><p><cctype>定义了一堆字符处理函数和宏</cctype></p>
+<ul>
+<li><p>isdigit(c):判断c是否为数字</p>
+</li>
+<li><p>isupper(c):判断c是否为大写字母</p>
+</li>
+<li><p>islower(c):判断c是否为小写字母  </p>
+</li>
+<li><p>isalpha(c):判断c是否为字母</p>
+</li>
+<li><p>isalnum(c):判断c是否为字母或者数字  </p>
+</li>
+<li><p>isprint(c):判断c是否是可显示的ASCII字符  </p>
+</li>
+<li><p>isspace(c):判断c是否为空字符</p>
+</li>
+<li><p>touper(c):将c转换成大写字符 </p>
+</li>
+<li><p>tolower(c):将c转换成小写字符 </p>
+</li>
+</ul>
+<h2 id="类型转换函数"><a href="#类型转换函数" class="headerlink" title="类型转换函数"></a>类型转换函数</h2><ul>
+<li><p>double atof(char*a):将字符串a转换成浮点数并返回  </p>
+</li>
+<li><p>int atoi(char*a):将字符串a转换成整数并返回  </p>
+</li>
+<li><p>long atol(char*a):将字符串a转换成长整型并返回  </p>
+</li>
+<li><p>char <em>itoa(int value,char </em>string,int radix):将整数value转换成字符串存入string  </p>
+</li>
+</ul>
+<h2 id="随机数函数"><a href="#随机数函数" class="headerlink" title="随机数函数"></a>随机数函数</h2><p>随机数函数定义在<stdlib>  </stdlib></p>
+<p>rang()返回0～RAND_MAX中随机的一个整数  </p>
+<p>rang()的产生依赖于一个发生器序列，一般需要调用srand()函数初始化，初始值一般被称作随机种子  </p>
+<h2 id="可变参数处理"><a href="#可变参数处理" class="headerlink" title="可变参数处理"></a>可变参数处理</h2><p><cstdarg>提供了几个宏和类型，以支持可变参数  </cstdarg></p>
+<ul>
+<li><p>va_list：记录参数类型  </p>
+</li>
+<li><p>va_start(list,p0):建议扫描参数表的起始指针，并保存参数信息至va_list的变量list  </p>
+</li>
+<li><p>va_arg(list,type):提取参数表list中的参数，并转换成type类型  </p>
+</li>
+<li><p>va_end(list):结束可变参数处理  </p>
+</li>
+</ul>
+<h2 id="内存操作函数"><a href="#内存操作函数" class="headerlink" title="内存操作函数"></a>内存操作函数</h2><p><cstring>和<cstdlib>中定义了如下内存操作函数  </cstdlib></cstring></p>
+<ul>
+<li><p>void *memchr(buffer,c,count):在内存中查找指定字符  </p>
+</li>
+<li><p>int memcmp(buf1,buf2,count):比较两块内存中的字符  </p>
+</li>
+<li><p>void *memcpy(dest,src,count):拷贝源内存块至目的的内存块  </p>
+</li>
+<li><p>void *memmove(dest,src,count):移动源内存块至目的内存块  </p>
+</li>
+<li><p>void *memset(dest,c,count):使用指定数值设置内存块的内容  </p>
+</li>
+<li><p>void *malloc(size):分配一块内存  </p>
+</li>
+<li><p>void <em>calloc(size,n):分配size\</em>n字节的内存，并清零  </p>
+</li>
+<li><p>void *free(buffer):释放分配的内存  </p>
+</li>
+</ul>
+<h2 id="系统控制函数"><a href="#系统控制函数" class="headerlink" title="系统控制函数"></a>系统控制函数</h2><cstdlib>  
+
+<ul>
+<li><p>void abort():异常终止程序  </p>
+</li>
+<li><p>int exit(int status):终止当前程序  </p>
+</li>
+<li><p>int system(chat *command):执行Shell命令  </p>
+</li>
+</ul>
+<h1 id="C-流"><a href="#C-流" class="headerlink" title="C++流"></a>C++流</h1><h2 id="格式化输出流"><a href="#格式化输出流" class="headerlink" title="格式化输出流"></a>格式化输出流</h2><p>iostream提供了格式化输出函数，用以制定输出的格式  </p>
+<ul>
+<li><p>width(n):将输出宽度设置为n个字符，默认情况下，输出宽度等于字符串实际长度  </p>
+</li>
+<li><p>idth():获取当前的宽度设置  </p>
+</li>
+<li><p>fill(ch):设置填充字符为ch，默认情况为空格  </p>
+</li>
+<li><p>fill():获取当前的填充字符  </p>
+</li>
+<li><p>precision(p):设置浮点数精度为p</p>
+</li>
+<li><p>precision():获取浮点数精度  </p>
+</li>
+<li><p>setf(m):打开格式化标志m  </p>
+</li>
+<li><p>unsetf(m):关闭格式化标志m  </p>
+</li>
+<li><p>setf(m1,m2):打开m1,关闭m2  </p>
+</li>
+</ul>
+<p>格式化标志可以上网搜索</p>
+<h2 id="格式操纵符"><a href="#格式操纵符" class="headerlink" title="格式操纵符"></a>格式操纵符</h2><p>可以直接使用&lt;&lt;输出  </p>
+<p>格式操纵符见互联网  </p>
+<h2 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h2><p>使用ofstream对象写入文件  </p>
+<p>open打开文件 -&gt; &lt;&lt;或者write函数写入文件 -&gt; close关闭文件  </p>
+<p>使用ifstream对象读取文件  </p>
+<p>open打开文件 -&gt; &gt;&gt;或者read函数读取文件 -&gt; close关闭文件  </p>
+<p>打开文件的模式包括  </p>
+<p>ios::app:追加模式  </p>
+<p>ios::ate:打开文件定位到文件尾  </p>
+<p>ios::binary:二进制方式打开  </p>
+<p>ios::in:输入方式打开  </p>
+<p>ios::out:输出方式打开  </p>
+<p>可以配合|使用  </p>
+<ul>
+<li>文件的定位  </li>
+</ul>
+<p>ifstream&amp; seekg(streampos pos);</p>
+</cstdlib>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/20/计算机网络安全原理-笔记/" rel="next" title="计算机网络安全原理_笔记">
+                <i class="fa fa-chevron-left"></i> 计算机网络安全原理_笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/11/汇编语言基础/" rel="prev" title="汇编语言基础">
+                汇编语言基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="ZeLinYang">
+            
+              <p class="site-author-name" itemprop="name">ZeLinYang</p>
+              <div class="site-description motion-element" itemprop="description">刚踏入编程的小萌新一枚</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类的继承"><span class="nav-number">1.</span> <span class="nav-text">类的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存中的派生类"><span class="nav-number">1.1.</span> <span class="nav-text">内存中的派生类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#protected"><span class="nav-number">1.2.</span> <span class="nav-text">protected</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基类访问控制"><span class="nav-number">1.3.</span> <span class="nav-text">基类访问控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造与析构"><span class="nav-number">1.4.</span> <span class="nav-text">构造与析构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基类的初始化"><span class="nav-number">1.5.</span> <span class="nav-text">基类的初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默认构造函数"><span class="nav-number">1.6.</span> <span class="nav-text">默认构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#派生类的析构"><span class="nav-number">1.7.</span> <span class="nav-text">派生类的析构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名字隐藏"><span class="nav-number">1.8.</span> <span class="nav-text">名字隐藏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类的多态性"><span class="nav-number">2.</span> <span class="nav-text">类的多态性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向上转换"><span class="nav-number">2.1.</span> <span class="nav-text">向上转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向下转换"><span class="nav-number">2.2.</span> <span class="nav-text">向下转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚函数"><span class="nav-number">2.3.</span> <span class="nav-text">虚函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚析构函数"><span class="nav-number">2.4.</span> <span class="nav-text">虚析构函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#纯虚函数"><span class="nav-number">2.5.</span> <span class="nav-text">纯虚函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类"><span class="nav-number">2.6.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多级继承"><span class="nav-number">2.7.</span> <span class="nav-text">多级继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚函数的多次填充"><span class="nav-number">2.8.</span> <span class="nav-text">虚函数的多次填充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多继承"><span class="nav-number">2.9.</span> <span class="nav-text">多继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多继承带来的问题"><span class="nav-number">2.10.</span> <span class="nav-text">多继承带来的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟继承"><span class="nav-number">2.11.</span> <span class="nav-text">虚拟继承</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板"><span class="nav-number">3.</span> <span class="nav-text">模板</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数模板的实例化"><span class="nav-number">3.1.</span> <span class="nav-text">函数模板的实例化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数模板的重载"><span class="nav-number">3.2.</span> <span class="nav-text">函数模板的重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数模板的特化"><span class="nav-number">3.3.</span> <span class="nav-text">函数模板的特化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类模板"><span class="nav-number">3.4.</span> <span class="nav-text">类模板</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常处理"><span class="nav-number">4.</span> <span class="nav-text">异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抛出异常"><span class="nav-number">4.1.</span> <span class="nav-text">抛出异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#捕获异常"><span class="nav-number">4.2.</span> <span class="nav-text">捕获异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#捕获不同类型的异常"><span class="nav-number">4.3.</span> <span class="nav-text">捕获不同类型的异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#捕获所有异常"><span class="nav-number">4.4.</span> <span class="nav-text">捕获所有异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在catch块抛出异常"><span class="nav-number">4.5.</span> <span class="nav-text">在catch块抛出异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未经捕获的异常"><span class="nav-number">4.6.</span> <span class="nav-text">未经捕获的异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定制terminate-的行为"><span class="nav-number">4.7.</span> <span class="nav-text">定制terminate()的行为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对抛出异常的声明"><span class="nav-number">4.8.</span> <span class="nav-text">对抛出异常的声明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#名字空间与域"><span class="nav-number">5.</span> <span class="nav-text">名字空间与域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#名字空间定义"><span class="nav-number">5.1.</span> <span class="nav-text">名字空间定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using声明"><span class="nav-number">5.2.</span> <span class="nav-text">using声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using指令"><span class="nav-number">5.3.</span> <span class="nav-text">using指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名字空间的别名"><span class="nav-number">5.4.</span> <span class="nav-text">名字空间的别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">5.5.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部作用域"><span class="nav-number">5.6.</span> <span class="nav-text">局部作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名字空间域"><span class="nav-number">5.7.</span> <span class="nav-text">名字空间域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类域"><span class="nav-number">5.8.</span> <span class="nav-text">类域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的生命周期"><span class="nav-number">5.9.</span> <span class="nav-text">对象的生命周期</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-标准库"><span class="nav-number">6.</span> <span class="nav-text">C++标准库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串库"><span class="nav-number">6.1.</span> <span class="nav-text">字符串库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复数类"><span class="nav-number">6.2.</span> <span class="nav-text">复数类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常类"><span class="nav-number">6.3.</span> <span class="nav-text">异常类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C标准库"><span class="nav-number">7.</span> <span class="nav-text">C标准库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#assert宏"><span class="nav-number">7.1.</span> <span class="nav-text">assert宏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型函数"><span class="nav-number">7.2.</span> <span class="nav-text">类型函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换函数"><span class="nav-number">7.3.</span> <span class="nav-text">类型转换函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机数函数"><span class="nav-number">7.4.</span> <span class="nav-text">随机数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变参数处理"><span class="nav-number">7.5.</span> <span class="nav-text">可变参数处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存操作函数"><span class="nav-number">7.6.</span> <span class="nav-text">内存操作函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统控制函数"><span class="nav-number">7.7.</span> <span class="nav-text">系统控制函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-流"><span class="nav-number">8.</span> <span class="nav-text">C++流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化输出流"><span class="nav-number">8.1.</span> <span class="nav-text">格式化输出流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式操纵符"><span class="nav-number">8.2.</span> <span class="nav-text">格式操纵符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件流"><span class="nav-number">8.3.</span> <span class="nav-text">文件流</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZeLinYang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
