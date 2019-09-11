@@ -1,9 +1,10 @@
 ---
-title: <<Linxu_命令行>>笔记
+title: 《Linxu_命令行》笔记
 date: 2019-07-05 13:30:47
 tags: note
 categories: Linux
 ---
+忽略我
 <!--more-->
 # 常见的错误信息  
 
