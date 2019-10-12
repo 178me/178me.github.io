@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="忽略我">
-<meta name="keywords" content="note">
+  <meta name="description" content="有趣的网络原理">
+<meta name="keywords" content="178me">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Linxu_命令行》笔记">
-<meta property="og:url" content="http://yoursite.com/2019/07/05/Linxu-命令行/index.html">
+<meta property="og:title" content="自学网络原理的第一天">
+<meta property="og:url" content="http://yoursite.com/2019/10/06/自学网络原理的第一天/index.html">
 <meta property="og:site_name" content="178me">
-<meta property="og:description" content="忽略我">
+<meta property="og:description" content="有趣的网络原理">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-23T08:29:22.527Z">
+<meta property="og:updated_time" content="2019-10-11T12:04:26.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《Linxu_命令行》笔记">
-<meta name="twitter:description" content="忽略我">
+<meta name="twitter:title" content="自学网络原理的第一天">
+<meta name="twitter:description" content="有趣的网络原理">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/05/Linxu-命令行/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/06/自学网络原理的第一天/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>《Linxu_命令行》笔记 | 178me</title>
+  <title>自学网络原理的第一天 | 178me</title>
   
 
 
@@ -328,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/05/Linxu-命令行/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/06/自学网络原理的第一天/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZeLinYang">
@@ -345,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《Linxu_命令行》笔记
+          <h1 class="post-title" itemprop="name headline">自学网络原理的第一天
 
               
             
@@ -371,7 +371,7 @@
                 
               
 
-              <time title="创建时间：2019-07-05 13:30:47" itemprop="dateCreated datePublished" datetime="2019-07-05T13:30:47+08:00">2019-07-05</time>
+              <time title="创建时间：2019-10-06 18:53:53" itemprop="dateCreated datePublished" datetime="2019-10-06T18:53:53+08:00">2019-10-06</time>
             
 
             
@@ -388,29 +388,11 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-23 16:29:22" itemprop="dateModified" datetime="2019-09-23T16:29:22+08:00">2019-09-23</time>
+                <time title="修改时间：2019-10-11 20:04:26" itemprop="dateModified" datetime="2019-10-11T20:04:26+08:00">2019-10-11</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -440,21 +422,76 @@
       
 
       
-        <p>忽略我<br><a id="more"></a></p>
-<h1 id="常见的错误信息"><a href="#常见的错误信息" class="headerlink" title="常见的错误信息"></a>常见的错误信息</h1><ol>
-<li><p>Command not found — 没有发现命令   </p>
+        <p>有趣的网络原理<br><a id="more"></a></p>
+<h2 id="第二章：网络应用"><a href="#第二章：网络应用" class="headerlink" title="第二章：网络应用"></a>第二章：网络应用</h2><h1 id="计算机网络应用体系结构"><a href="#计算机网络应用体系结构" class="headerlink" title="计算机网络应用体系结构"></a>计算机网络应用体系结构</h1><p>先来简单的介绍下有哪些体系结构  </p>
+<ol>
+<li><p>客户/服务器(C/S)结构网络应用<br>(C/S)结构的网络应用最基本，最典型的网络应用。它需要服务器程序先运行，客户程序后运行并主动请求于服务器进行通信。<br>例如www应用，文件传输FTP、电子邮件等。<br>区别于其他的结构体系方法就是它的通信只在客户于服务器之间。</p>
 </li>
-<li><p>Access denied — 拒绝访问  </p>
+<li><p>纯P2P结构网络应用结构<br>很明显，这是一个客户对客户的体系结构，P2P应用中的每个对等端都同时具备C/S应用的客户与服务的特征，是一个服务器与客户的结合体。<br>例如Gnurella、BitTorent等<br>在这里，我们已经认识到两种体系结构了，他们各自有优缺点，所以按照取长补短的原则就出现了混合型的体系结构(Ps:好像每次有这种结构啥的都有混合型)</p>
 </li>
-<li><p>Write protect error — 写保护错误  </p>
+<li><p>混合结构网络应用<br>它既有中心服务器的存在，又有对等端间的直接通信。是C/S和P2P的结合。<br>客户通过C/S方式想服务器注册自己的网络地址，然后就可以在中心服务器找到其他的客户共享资源或分享资源。</p>
 </li>
-<li><p>Drive not ready — 驱动器未准备好  </p>
-</li>
-<li><p>General error — 通常错误  </p>
-</li>
-<li></li>
 </ol>
-
+<h1 id="网络应用通信基本原理"><a href="#网络应用通信基本原理" class="headerlink" title="网络应用通信基本原理"></a>网络应用通信基本原理</h1><ul>
+<li>首先，网络应用的本质就是应用进程之间的通信。  </li>
+<li>基本通信方式是C/S通信。  </li>
+<li>应用进程之间遵循应用层协议交换应用层报文  </li>
+<li>应用层协议定义了语法、语序、语义三要素内容。</li>
+<li>按道理说，应该是应用层和应用层之间直接进行传输，但其实是应用层需要通过层间接口将报文发送给传输层，请求端到端传输服务。  </li>
+<li>编程接口是套接字，它是网络进程之间进行网络通信时，真正收发报文的通道。  </li>
+<li>对于传输层协议，我们需要为其接口的每个套接字编号，用来标识这个套接字，该编号就是端口号。  </li>
+<li>比如web服务器的默认端口号是80，是为熟知端口号</li>
+<li>每个应用层通过一个或多个套接字于传输层进行接口，因此，我们可以通过进程运行的主机ip地址和套接字绑定的端口号来标识应用进程。  </li>
+</ul>
+<p>Internet提供两种传输层协议  </p>
+<ul>
+<li>面向连接的可靠字节流传输服务<br>对应传输层的TCP协议，提供面向连接的服务和可靠的数据传送服务。</li>
+<li>无连接的不可靠数据报传输服务<br>对应UDP，不提供传输服务保障的轻量级传输层协议，仅提供最小的尽力服务。</li>
+</ul>
+<p>但是这两种协议都不提供端到端吞吐量以及时延保障服务。  </p>
+<h1 id="域名系统"><a href="#域名系统" class="headerlink" title="域名系统"></a>域名系统</h1><p>用户使用网络应用时，需要通过指定的IP地址和端口号才能访问。这非常不利于记忆，所以人们就发明了域名，用来访问指定的服务器主机。<br>域名系统(DNS)可以将域名映射为IP地址。实现将域名映射成为IP地址的过程，称为域名解析。  </p>
+<h2 id="层次化域名空间"><a href="#层次化域名空间" class="headerlink" title="层次化域名空间"></a>层次化域名空间</h2><p>DNS为了实现高效的管理和查找，域名的结构由标点序列组成，各标号用点隔开  </p>
+<ol>
+<li>国家顶级域名nTLD: cn(中国)，us(美国)  </li>
+<li>通用顶级域名gTLD: com(公司和企业)，net(网络服务机构),org(非盈利性组织),edu(教育机构)，gov(政府部门结构)，mil(军事)，int(国际).  </li>
+<li>基础结构域名: 只有一个，arpa,用于反向域名解析，因此又称反向域名  </li>
+</ol>
+<h2 id="域名服务器"><a href="#域名服务器" class="headerlink" title="域名服务器"></a>域名服务器</h2><ol>
+<li>根域名服务器<br>最重要的域名服务器，在因特网上又13个不同ip地址的根域名服务器。从a开始，比如说a.rootservers.net  </li>
+<li>顶级域名服务器<br>负责管理在该顶级域名服务器注册的所有二级域名  </li>
+<li>权威域名服务器<br>负责一个区的域名服务器，保存该区的所有主机域名到IP地址的映射  </li>
+</ol>
+<h2 id="域名解析过程"><a href="#域名解析过程" class="headerlink" title="域名解析过程"></a>域名解析过程</h2><ol>
+<li>递归解析  </li>
+<li>迭代解析  </li>
+</ol>
+<h1 id="万维网应用"><a href="#万维网应用" class="headerlink" title="万维网应用"></a>万维网应用</h1><p>web应用操作简单，其按需浏览、图形化界面，主要包括web服务器、浏览器、超文件传输协议等。  </p>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>web的应用层协议，定义浏览器如何向web服务器发送请求以及web服务器如何向浏览器进行反应。  </p>
+<ul>
+<li>HTTP连接  </li>
+</ul>
+<ol>
+<li>并行连接  </li>
+<li>持久连接  </li>
+</ol>
+<ul>
+<li>HTTP报文  </li>
+</ul>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>小型文本文件，为了辨别用户身份、进行会话跟踪而存储本地的消息。  </p>
+<h1 id="Internet电子邮件"><a href="#Internet电子邮件" class="headerlink" title="Internet电子邮件"></a>Internet电子邮件</h1><h2 id="电子邮件结构"><a href="#电子邮件结构" class="headerlink" title="电子邮件结构"></a>电子邮件结构</h2><ul>
+<li>邮件服务器  </li>
+<li>简单邮件传输协议(SMTP)</li>
+<li>用户代理</li>
+<li>邮件读取协议  </li>
+</ul>
+<h2 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h2><p>是Internet电子邮件中核心应用层协议，实现邮件服务器之间或用户代理到邮件服务器之间的邮件传输。</p>
+<h2 id="电子邮件格式于MIME"><a href="#电子邮件格式于MIME" class="headerlink" title="电子邮件格式于MIME"></a>电子邮件格式于MIME</h2><h2 id="邮件读取协议"><a href="#邮件读取协议" class="headerlink" title="邮件读取协议"></a>邮件读取协议</h2><ol>
+<li>POP3  </li>
+<li>IMAP  </li>
+<li>HTTP  </li>
+</ol>
+<h1 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h1><p>文件传送协议，是在互联上的两台不同主机间实现文件互传的网络应用  </p>
+<h1 id="socket网络编程"><a href="#socket网络编程" class="headerlink" title="socket网络编程"></a>socket网络编程</h1>
       
     </div>
 
@@ -475,12 +512,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/note/" rel="tag"># note</a>
-          
-        </div>
-      
 
       
       
@@ -490,8 +521,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/08/Linux基本知识2/" rel="next" title="Linux基本知识2">
-                <i class="fa fa-chevron-left"></i> Linux基本知识2
+              <a href="/2019/09/11/汇编语言基础/" rel="next" title="汇编语言基础">
+                <i class="fa fa-chevron-left"></i> 汇编语言基础
               </a>
             
           </div>
@@ -499,10 +530,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/09/暑假计划/" rel="prev" title="暑假计划">
-                暑假计划 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -651,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常见的错误信息"><span class="nav-number">1.</span> <span class="nav-text">常见的错误信息</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章：网络应用"><span class="nav-number">1.</span> <span class="nav-text">第二章：网络应用</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络应用体系结构"><span class="nav-number"></span> <span class="nav-text">计算机网络应用体系结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络应用通信基本原理"><span class="nav-number"></span> <span class="nav-text">网络应用通信基本原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#域名系统"><span class="nav-number"></span> <span class="nav-text">域名系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#层次化域名空间"><span class="nav-number">1.</span> <span class="nav-text">层次化域名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名服务器"><span class="nav-number">2.</span> <span class="nav-text">域名服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析过程"><span class="nav-number">3.</span> <span class="nav-text">域名解析过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#万维网应用"><span class="nav-number"></span> <span class="nav-text">万维网应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">1.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie"><span class="nav-number">2.</span> <span class="nav-text">Cookie</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Internet电子邮件"><span class="nav-number"></span> <span class="nav-text">Internet电子邮件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#电子邮件结构"><span class="nav-number">1.</span> <span class="nav-text">电子邮件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SMTP"><span class="nav-number">2.</span> <span class="nav-text">SMTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电子邮件格式于MIME"><span class="nav-number">3.</span> <span class="nav-text">电子邮件格式于MIME</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#邮件读取协议"><span class="nav-number">4.</span> <span class="nav-text">邮件读取协议</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FTP"><span class="nav-number"></span> <span class="nav-text">FTP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#socket网络编程"><span class="nav-number"></span> <span class="nav-text">socket网络编程</span></a></li></div>
             
 
           </div>
