@@ -4,7 +4,10 @@ date: 2019-10-26 23:07:00
 tags:
 categories:
 ---
+写给没记性又爱折腾的自己
+
 <!--more-->
+
 ## 电脑环境
 manjaro i3
 
@@ -24,10 +27,12 @@ pacman-mirrors China  //自动设置中国镜像源
     将本地语言改为中文，修改/etc/locale.gen，找到zh.CN.China.utf-8,去掉注释，然后locale-gen,如果还不行的话就修改locale.conf文件，具体百度。  
 
 3. 输入法  
-    pacman -S fcitx fcitx-sogoupinyin       //这里我使用fcitx的搜狗
+    pacman -S fcitx fcitx-qt5 fcitx-sogoupinyin       //这里我使用fcitx的搜狗
+
 
 4. 浏览器  
     pacman -S google-chrome  
+    可以直接使用我配置里的google扩展插件进行离线安装，就可以访问谷歌的一些服务  
     这下我就可以在终端下输入中文字体，也可以欢快的百度了，搞定了这一步就完成了大部分。
 
 5. 现在需要生成一个密钥以便git下载文件  
@@ -60,7 +65,18 @@ sudo pacman -S variety
 4. 好看的虚拟终端加上半透明效果  
 sudo pacman -S alacritty compton
 
-5. 
+5. 你需要一个梯子！
+sudo pacman -S electron-ssr  
+下载好就从剪贴板导入ssr，开启就好了，export https_proxy=127.0.0.1:12333这个是https的其他的同理，改下端口号就行了
+
+6. 一个好的外国聊天软件，当然也有国内的
+sudo pacman -S telegram-desktop  
+进入之后设置自定义代理，登录搜索zh就会出来中文包，下载更换即可实现中文。
+
+7. 不嗨歌是没有灵魂的！完美的网易云音乐  
+sudo pacman -S netease-cloud-music  
+yay -S qcef
+顺带提一下，可以修改opt/netease/netease-cloud-music下的netease-cloud-music.bash,在exec上面加上一行内容即可：export XDG_CURRENT_DESKTOP=DDE
 
 ### 系统功能设置
 1. 触摸板驱动  
@@ -101,6 +117,11 @@ git clone https://github.com/178me/My_Arch.git
 
 5. 笔记本的一些硬件支持详情 [包括指纹等资料](https://wiki.archlinux.org/index.php/Laptop_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
 
+6. 修改默认编辑器  
+echo export EDITOR=/usr/bin/vim >> ~/.bashrc
+
+7. 修改键盘布局  
+setxkbmap us
 
 
 
