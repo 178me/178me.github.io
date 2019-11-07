@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="关于面向对象编程的笔记">
+<meta name="keywords" content="note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ note3">
+<meta property="og:url" content="http://yoursite.com/2019/06/04/C++ note3/index.html">
+<meta property="og:site_name" content="178me">
+<meta property="og:description" content="关于面向对象编程的笔记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-07T16:36:30.744Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++ note3">
+<meta name="twitter:description" content="关于面向对象编程的笔记">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/06/04/C++ note3/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>C++ note3 | 178me</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">178me</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">为了开发而努力开发</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/C++ note3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZeLinYang">
+      <meta itemprop="description" content="刚踏入编程的小萌新一枚">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="178me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++ note3
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-04 16:47:12" itemprop="dateCreated datePublished" datetime="2019-06-04T16:47:12+08:00">2019-06-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-08 00:36:30" itemprop="dateModified" datetime="2019-11-08T00:36:30+08:00">2019-11-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关于面向对象编程的笔记  </p>
+<a id="more"></a>  
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a><strong>面向对象</strong></h1><hr>
+<blockquote>
+<p><strong>new 动态内存分配</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int* i = new int;   //类型*变量 = new 类型</span><br><span class="line">int* ip = new int[5];//分配数组</span><br><span class="line">int* (*ip)[5] = new int[5][4]   //分配多维数组</span><br><span class="line">delete [] ip;   //数组的销毁方式</span><br><span class="line">/**思考题</span><br><span class="line"> *1、new如何动态分配多维数组？</span><br><span class="line">    int (*ipp)[4] = new int[5][4];</span><br><span class="line"> *2、分配出来的多维数组如何销毁？</span><br><span class="line">    delete[] ipp;</span><br><span class="line"> **/</span><br><span class="line">delete i;   //销毁地址</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> 常见错误</p>
+<ul>
+<li>忘记销毁new出来的地址，会造成内存泄露  </li>
+<li>多次销毁一段内存；建议采用如下方法判断某段内存是否被销毁过；  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(ip)&#123;</span><br><span class="line">    delete ip;</span><br><span class="line">    ip = 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>销毁一段非new分配的内存  </li>
+<li>使用被delete的内存  </li>
+<li>务必要记住，new和delete必须要成对使用  </li>
+<li>new的对象不要盲目使用自增运算符  </li>
+<li>取值运算需要加上取值操作符*  </li>
+</ul>
+<hr>
+<blockquote>
+<p> <strong>默认参数</strong>  </p>
+<ul>
+<li>C++函数中可以带有默认参数  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">double Add(int num1,int num2 = 0)&#123;</span><br><span class="line">    return num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line">· 所有参数都可以具有默认参数</span><br><span class="line">· 默认参数必须从最右边开始</span><br><span class="line">· 不可以使用形参作为默认参数</span><br><span class="line">· 一般来说，默认参数一般使用在函数参数很多的情况下，</span><br><span class="line">它避免了函数调用者必须记住太多太长的参数</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p> <strong>可变参数</strong>  </p>
+<ul>
+<li>C++提供一种“可变参数”的机制，即允许参数的数目是可变的。  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/* 要定义一个支持可变参数的函数，需要用到头文件&lt;cstd</span><br><span class="line">arg&gt;中的一些东西 */</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstdarg&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int Add(int first...);</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	int sum = Add(11, 22, 33, -1);</span><br><span class="line">&#125;</span><br><span class="line">int Add(int first...) &#123;</span><br><span class="line">	//准备读取可变参数</span><br><span class="line">	va_list nums;</span><br><span class="line">	va_start(nums, first);   </span><br><span class="line">	//使用&lt;cstdarg&gt;中的va_xxx宏函数处理可变参数</span><br><span class="line">	int sum = 0;</span><br><span class="line">	int num = first;</span><br><span class="line">	//依次读取参数，-1表示结束</span><br><span class="line">	while (num != -1) &#123;</span><br><span class="line">		cout &lt;&lt; &quot;+&quot; &lt;&lt; num &lt;&lt; endl;</span><br><span class="line">		sum += num;</span><br><span class="line">		num = va_arg(nums, int);</span><br><span class="line">	&#125;</span><br><span class="line">	va_end(nums);</span><br><span class="line">	return sum;</span><br><span class="line">&#125;</span><br><span class="line">------------</span><br><span class="line">以上主要思想是使用va_xxx读取参数列表，并进行加和。遇</span><br><span class="line">到-1结束，可变参数处理起来比较麻烦。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p> <strong>内联函数</strong>  </p>
+<ul>
+<li>在进行函数调用前，会将调用函数的地址和参数列表等信息<br>保留在堆栈中，以便在函数执行结束后，可以返回到原先调<br>用的程序继续执行。因此对于某些频繁调用的小型函数来说<br>，这些堆栈存取动作，会降低的程序的执行效率，此时即可<br>使用内敛函数解决问题。<br>内联函数允许函数内部的内容正在调用点直接展开，这样就<br>避免了传统调用函数过程带来的性能损失。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">inline int add(int,int);</span><br><span class="line">void add(int a,int b)&#123;</span><br><span class="line">    cout &lt;&lt; &quot;接收两个数计算和&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;和值为:&quot; &lt;&lt; a+b &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    add(1,2);</span><br><span class="line">    /*编译器会改写成*/</span><br><span class="line">    cout &lt;&lt; &quot;接收两个数计算和&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;和值为:&quot; &lt;&lt; a+b &lt;&lt; endl;</span><br><span class="line">    ----------</span><br><span class="line">    实际上，inline只是对编译器进行优化的一个建议，</span><br><span class="line">    编译器完全可能会不理会该建议，所以，不要滥用inl</span><br><span class="line">    ine函数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p> <strong>函数重载</strong>  </p>
+<ul>
+<li>函数名相同，参数列表不同，就是函数的重载特性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">函数重载经常出现的错误示例：</span><br><span class="line">int add(int a)&#123;</span><br><span class="line">    return a；</span><br><span class="line">&#125;</span><br><span class="line">float add(int a)&#123;</span><br><span class="line">    return a</span><br><span class="line">&#125;</span><br><span class="line">//不能依赖于返回值的类型不同选定一个函数</span><br><span class="line">//实参与形参类型不同</span><br><span class="line">//不要认为的制造二义性冲突，例如</span><br><span class="line">int add(int a)&#123;</span><br><span class="line">    return a;</span><br><span class="line">&#125;</span><br><span class="line">int add(int a,int b = 10)&#123;</span><br><span class="line">    return a + b; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>安全连接和名字重组自行百度了解  </li>
+</ul>
+<blockquote>
+<p><strong>递归函数</strong>  </p>
+<ul>
+<li>函数自己调用自己，即递归函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">void test(int);</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	test(10);</span><br><span class="line">&#125;</span><br><span class="line">void test(int num1) &#123;</span><br><span class="line">	cout &lt;&lt; &quot;函数开始&quot; &lt;&lt; endl;</span><br><span class="line">	if (num1 == 0) return;</span><br><span class="line">	test(num1 / 2);</span><br><span class="line">	cout &lt;&lt; &quot;函数结束&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">输出结果如下:</span><br><span class="line">函数开始</span><br><span class="line">函数开始</span><br><span class="line">函数开始</span><br><span class="line">函数开始</span><br><span class="line">函数开始</span><br><span class="line">函数结束</span><br><span class="line">函数结束--gg</span><br><span class="line">函数结束</span><br><span class="line">函数结束</span><br><span class="line">--------------</span><br><span class="line">个人是这样理解的,递归就是一个函数嵌套的过程，像上面</span><br><span class="line">的程序有五个函数开始，这是在执行递归之前的语句，也</span><br><span class="line">就是说算上第一次进入函数，这个函数执行了五次，但对</span><br><span class="line">应的函数结束却只出现了四次，那是因为最后一次执行了 </span><br><span class="line">return语句，直接跳出了函数，也就没有后面的语句的执</span><br><span class="line">行。结合理解使用调试功能进行观察效果会更好。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>函数指针</strong>  </p>
+<ul>
+<li>在C++中提供函数指针，它用以指向一个函数  </li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void (*fp)();   //声明一个类型为void，没有参数的函数指针</span><br><span class="line">fp = &amp;add;  //指向add函数的地址</span><br><span class="line">fp = add    //等同与指向</span><br><span class="line">//调用的方法</span><br><span class="line">fp();       //相当于add()</span><br><span class="line">(*fp)();    //相当于add()，一般用这种来区别这是一个函数指针的调用</span><br></pre></td></tr></table></figure>
+<ul>
+<li>理解函数指针</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int add(int a ,int b) &#123;</span><br><span class="line">	return a + b;</span><br><span class="line">&#125;</span><br><span class="line">int min(int a, int b);</span><br><span class="line">int main() &#123;</span><br><span class="line">	void (*fp1)(int);</span><br><span class="line">	int (*fp2)(int, int);</span><br><span class="line">	cout &lt;&lt; typeid(fp1).name() &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; typeid(fp2).name() &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; typeid(add).name() &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; typeid(min).name() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">int min(int a, int b) &#123;</span><br><span class="line">	return a - b;</span><br><span class="line">&#125;</span><br><span class="line">------------</span><br><span class="line">利用typeid输出函数指针类型来理解它</span><br><span class="line">根据这样的特性，我们可以定义函数指针数字组</span><br><span class="line">int (*fp[])(int ,int ) = &#123;&amp;add,&amp;min&#125;</span><br><span class="line">函数指针的定义有点繁琐，建议用typedef来改善可读性。</span><br><span class="line">typedef int (*fp)(int,int);</span><br><span class="line">fp fp1 = add;</span><br><span class="line">fp fp2 = &amp;min;</span><br><span class="line">fp fp3[] = &#123;&amp;add,&amp;min&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>函数与值传递  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">·值传递有三种方式：传值方式，引用方式，传址方式</span><br><span class="line"></span><br><span class="line">·向函数传递参数的时候，除了引用方式外，其他方式都是</span><br><span class="line">在函数内部将参数内容复制一份使用。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>类的设计</strong></p>
+<ul>
+<li>类是对象的类型，对象是类的实例  </li>
+<li>类的设计  </li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">· 类的语法定义：</span><br><span class="line">class 类名&#123;</span><br><span class="line">访问控制符:</span><br><span class="line">    成员列表</span><br><span class="line">&#125;;</span><br><span class="line">· 类也可以先声明后定义，声明方式如下</span><br><span class="line">class 类名;</span><br><span class="line">· 对象的定义</span><br><span class="line">类名 对象名;</span><br><span class="line">类名 * 对象名 = new 类名();</span><br><span class="line">//类的两种实例化方法</span><br><span class="line">还可以定义类对象的指针和引用</span><br><span class="line">类名 * 指针名 = &amp;对象名;</span><br><span class="line">类名 &amp; 引用名 = 对象名;</span><br><span class="line">· 数据成员的访问</span><br><span class="line">可以使用&quot;.&quot;来访问数据成员</span><br><span class="line">对象指针用&quot;-&gt;&quot;来访问</span><br><span class="line">还支持用&quot;::&quot;域名操作符访问成员，但常用以上两种</span><br><span class="line">· 成员访问控制</span><br><span class="line">访问控制符一般包括两种</span><br><span class="line">public:共有的，可以在任意地方访问成员</span><br><span class="line">private:私有的，只能在类的内部访问成员</span><br><span class="line">有一种不成文的规矩，就是把私有的数据成员加上下划线</span><br><span class="line">· 成员函数</span><br><span class="line">成员函数其实与普通的函数没有太大的差别，它可以被内</span><br><span class="line">联，也可以被重载，也可以使用默认参数，唯一的区别就</span><br><span class="line">是定义是要加上类域的帽子，但声明不需要，如</span><br><span class="line">class A&#123;</span><br><span class="line">    void a();</span><br><span class="line">&#125;;</span><br><span class="line">void A :: a()&#123;  //数据类型 所属类名 :: 函数名</span><br><span class="line">    cout &lt;&lt; &quot;我属于A类&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">· this指针</span><br><span class="line">在成员函数体内，有一种特殊的指针，this指针。this指</span><br><span class="line">针指向当前类对象本身，可以用this调用对象的成员：</span><br><span class="line">this -&gt; a();</span><br><span class="line">注意:this不能被改变，也不能在类作用域以外的地方使用</span><br><span class="line">· 内存中的类</span><br><span class="line">类包括数据成员和成员函数，但内存中的类只包括其数据</span><br><span class="line">成员，成员函数其实并不属于对象，它只是一个特殊的全</span><br><span class="line">局函数。</span><br><span class="line">· 类的长度等于所有数据成员的长度之和，但是考虑如下情况：</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A &#123;</span><br><span class="line">public:</span><br><span class="line">	int a;</span><br><span class="line">	int b;</span><br><span class="line">	char c;</span><br><span class="line">	char d;</span><br><span class="line">&#125;;</span><br><span class="line">class B &#123;</span><br><span class="line">public:</span><br><span class="line">	int a;</span><br><span class="line">	char c;</span><br><span class="line">	int b;</span><br><span class="line">	char d;</span><br><span class="line">&#125;;</span><br><span class="line">int main() &#123;</span><br><span class="line">	cout &lt;&lt; sizeof(A) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; sizeof(B) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">输出如下：</span><br><span class="line">12</span><br><span class="line">16</span><br><span class="line">为了程序运行的效率，编译器在一定的设置下可能对成员</span><br><span class="line">排放位置做一些调整，使得整个结构体为一个字节长的整</span><br><span class="line">数倍，这就是所谓的“字节对齐”，上面演示了这种布局的</span><br><span class="line">差异，可以看出来，，不同的排列方式会引起类字节长度</span><br><span class="line">的差别，大家写代码一定要考虑这一点。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>UML类图可以表示一个类，便于理解，如  </li>
+<li>私有是”-“前缀，共有则是”+”前缀  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">数据成员</td>
+</tr>
+<tr>
+<td style="text-align:center">函数成员</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p> <strong>类的讨论</strong>  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">· 类与结构</span><br><span class="line">C++中提供结构和类。在数据成员上，它们唯一的差别在于</span><br><span class="line">：结构成员的默认访问控制为public，类的默认访问控制</span><br><span class="line">为private。</span><br><span class="line">class是一个全新的概念，所以人们更愿意接受class是真</span><br><span class="line">正的面向对象概念。而对于struct，人们更愿意用来描述</span><br><span class="line">那些没有行为或者行为能力很弱的数据结构体。</span><br><span class="line">· 抽象性</span><br><span class="line">在软件开发的分析、设计时对具体问题进行归纳、概括，</span><br><span class="line">并将这一类对象的公共特性加以条理化和严格描述，它主</span><br><span class="line">张集中思想和精力，考虑关键、主要、实质性的问题，去</span><br><span class="line">掉非主要的部分，便于开发人员对整个问题准确地认识。</span><br><span class="line">为具体的对象定义一个类的过程就是抽象。</span><br><span class="line">· 封装性</span><br><span class="line">保证程序员用正确的方式操作对象，并将一些操作细节隐</span><br><span class="line">藏起来。主要体现如下方面:</span><br><span class="line">--- 保护私有数据:不允许外部程序直接访问私有的数据</span><br><span class="line">--- 隐藏了操作细节:提供公用成员函数提供外部调用</span><br><span class="line">根据这两个方面,我们可以举一个例子来说明:</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A &#123;</span><br><span class="line">	/**</span><br><span class="line">	 *声明一个A类，包含两个数据成员并封装成4个成员函数</span><br><span class="line">	 *这里使用this指针加深印象</span><br><span class="line">	 **/</span><br><span class="line">	string _name;</span><br><span class="line">	string _sex;</span><br><span class="line">public:</span><br><span class="line">	void setname(string name) &#123; </span><br><span class="line">		this -&gt;_name = name; </span><br><span class="line">	&#125;</span><br><span class="line">	void setsex(string sex) &#123; </span><br><span class="line">		this-&gt;_sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line">	string getname() &#123; return this -&gt;_name; &#125;</span><br><span class="line">	string getsex() &#123; return this -&gt;_sex; &#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main() &#123;</span><br><span class="line">	/**</span><br><span class="line">	 *使用指针的方法实例化A的一个对象</span><br><span class="line">	 *定义两个string临时变量</span><br><span class="line">	 *调用公共的数据成员封装函数进行赋值和输出</span><br><span class="line">	 **/</span><br><span class="line">	A * a1 = new A();</span><br><span class="line">	string temp1,temp2;</span><br><span class="line">	cout &lt;&lt; &quot;请输入你的姓名&quot;;</span><br><span class="line">	cin &gt;&gt; temp1;</span><br><span class="line">	a1-&gt;setname(temp1);</span><br><span class="line">	cout &lt;&lt; &quot;请输入你的性别&quot;;</span><br><span class="line">	cin &gt;&gt; temp2;</span><br><span class="line">	a1-&gt;setsex(temp2);</span><br><span class="line">	cout &lt;&lt; &quot;姓名:&quot; &lt;&lt; a1-&gt;getname() &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; &quot;性别:&quot; &lt;&lt; a1-&gt;getsex() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">程序员的责任就是封装复杂的数据和操作，以简单明了的</span><br><span class="line">共有函数的方式为外部程序提供对象操作接口</span><br></pre></td></tr></table></figure>
+<h1 id="类的封装性"><a href="#类的封装性" class="headerlink" title="类的封装性"></a>类的封装性</h1><p>封装性保证程序员通过正确的方式操作对象，并将操作的细节隐藏起来。</p>
+<ul>
+<li><p>保护私有数据：不允许外部程序访问私有的数据  </p>
+</li>
+<li><p>隐藏了操作细节：提供公共方法，以供外部程序调用  </p>
+</li>
+</ul>
+<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol>
+<li>类的组合  </li>
+</ol>
+<p>类的数据成员可以是基本类型、复合类型、或者是一个自定义类的对象。</p>
+<ol start="2">
+<li>类的声明  </li>
+</ol>
+<p>要在调用类之前先声明这个类</p>
+<h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><p>是一个有特殊的成员函数，定义类的实例被隐式调用</p>
+<ul>
+<li><p>函数名与类名一致</p>
+</li>
+<li><p>与正常的函数规则一致，可重载但不能有返回值例如，可以带有参数，默认值等</p>
+</li>
+<li><p>一般用来初始化数据 </p>
+</li>
+<li><p>没有定义构造函数时C++会自动创建默认构造函数  </p>
+</li>
+</ul>
+<h2 id="成员初始值列表"><a href="#成员初始值列表" class="headerlink" title="成员初始值列表"></a>成员初始值列表</h2><p>构造函数的特有的初始化方式。用以指定在调用该构造函数是完成的初始化序列</p>
+<p>以：引起，多个值以，间隔;初始化语句写成()形式</p>
+<h1 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h1><p>是与构造函数相反的一个特殊函数，销毁对象或某个对象离开作用域时会调用析构函数。</p>
+<ul>
+<li><p>以～引起，函数名与类名一致  </p>
+</li>
+<li><p>没有返回值，参数列表为空  </p>
+</li>
+<li><p>一般用来销毁对象  </p>
+</li>
+<li><p>没有定义时会自动创建默认析构函数  </p>
+</li>
+</ul>
+<h1 id="转换构造函数"><a href="#转换构造函数" class="headerlink" title="转换构造函数"></a>转换构造函数</h1><p>当某个构造函数只有一个参数，而该参数又不是本类的const引用，称为转换构造函数  </p>
+<h2 id="explicit"><a href="#explicit" class="headerlink" title="explicit"></a>explicit</h2><p>不允许显式调用函数  </p>
+<h1 id="拷贝构造函数"><a href="#拷贝构造函数" class="headerlink" title="拷贝构造函数"></a>拷贝构造函数</h1><p>拷贝构造函数即复制一个对象。 </p>
+<h1 id="操作符重载"><a href="#操作符重载" class="headerlink" title="操作符重载"></a>操作符重载</h1><p>为类定义操作符函数  </p>
+<p>例：如果一个对象将 ～操作符 重载，则～a等同于a.operator~()</p>
+<h2 id="注意点-1"><a href="#注意点-1" class="headerlink" title="注意点"></a>注意点</h2><ol>
+<li><p>操作符重载函数可以有形参  </p>
+</li>
+<li><p>一元操作符不能混当二元操作符使用，同理，二元也一样。</p>
+</li>
+<li><p>对于查找顺序来说，编译器会先查找对象操作符的重载，再去查找全局操作符的重载</p>
+</li>
+<li><p>类型转换：将对象转换成对应的类型，如：Actor::operator string()</p>
+</li>
+</ol>
+<h1 id="const"><a href="#const" class="headerlink" title="const"></a>const</h1><p>用来指示某个变量不能被修改  </p>
+<p>如果在对象实例前加上const，那么你就只能使用const类型的成员函数  </p>
+<h1 id="mutable"><a href="#mutable" class="headerlink" title="mutable"></a>mutable</h1><p>用来修饰数据成员，表示可变的。   </p>
+<p>加了const的函数遇到使用mutable数据成员的修改会忽略它。  </p>
+<h1 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h1><p>当一个类或一个函数声明为另一个类的朋友时，它就可以访问该类的私有成员</p>
+<h2 id="注意点-2"><a href="#注意点-2" class="headerlink" title="注意点"></a>注意点</h2><ol>
+<li><p>使用友元在前面加上friend  </p>
+</li>
+<li><p>注意声明的顺序  </p>
+</li>
+<li><p>如果A类声明B类为友元，那么B类可以访问A类的私有数据成员，A类则不能访问B类  </p>
+</li>
+<li><p>友元在一定程度上破坏了类的封装性，尽量不要过多使用  </p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/04/C++ note1-1/" rel="next" title="C++ note1">
+                <i class="fa fa-chevron-left"></i> C++ note1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/05/Linux基本知识/" rel="prev" title="Linux基本知识">
+                Linux基本知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="ZeLinYang">
+            
+              <p class="site-author-name" itemprop="name">ZeLinYang</p>
+              <div class="site-description motion-element" itemprop="description">刚踏入编程的小萌新一枚</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类的封装性"><span class="nav-number">2.</span> <span class="nav-text">类的封装性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意点"><span class="nav-number">2.1.</span> <span class="nav-text">注意点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数"><span class="nav-number">3.</span> <span class="nav-text">构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#成员初始值列表"><span class="nav-number">3.1.</span> <span class="nav-text">成员初始值列表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#析构函数"><span class="nav-number">4.</span> <span class="nav-text">析构函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转换构造函数"><span class="nav-number">5.</span> <span class="nav-text">转换构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#explicit"><span class="nav-number">5.1.</span> <span class="nav-text">explicit</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拷贝构造函数"><span class="nav-number">6.</span> <span class="nav-text">拷贝构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作符重载"><span class="nav-number">7.</span> <span class="nav-text">操作符重载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意点-1"><span class="nav-number">7.1.</span> <span class="nav-text">注意点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const"><span class="nav-number">8.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mutable"><span class="nav-number">9.</span> <span class="nav-text">mutable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友元"><span class="nav-number">10.</span> <span class="nav-text">友元</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意点-2"><span class="nav-number">10.1.</span> <span class="nav-text">注意点</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZeLinYang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

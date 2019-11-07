@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="继续">
+<meta name="keywords" content="note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基本知识2">
+<meta property="og:url" content="http://yoursite.com/2019/06/08/Linux基本知识2/index.html">
+<meta property="og:site_name" content="178me">
+<meta property="og:description" content="继续">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-07T16:36:30.744Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux基本知识2">
+<meta name="twitter:description" content="继续">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/06/08/Linux基本知识2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Linux基本知识2 | 178me</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">178me</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">为了开发而努力开发</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/Linux基本知识2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZeLinYang">
+      <meta itemprop="description" content="刚踏入编程的小萌新一枚">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="178me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux基本知识2
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-08 14:09:52" itemprop="dateCreated datePublished" datetime="2019-06-08T14:09:52+08:00">2019-06-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-08 00:36:30" itemprop="dateModified" datetime="2019-11-08T00:36:30+08:00">2019-11-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>继续<br><a id="more"></a></p>
+<h1 id="用户与组"><a href="#用户与组" class="headerlink" title="用户与组"></a>用户与组</h1><h2 id="用户分类"><a href="#用户分类" class="headerlink" title="用户分类"></a>用户分类</h2><p>系统管理员(root)、系统用户(不可登录)、普通用户（可登录）。  </p>
+<h2 id="建立帐号"><a href="#建立帐号" class="headerlink" title="建立帐号"></a>建立帐号</h2><p>系统会为用户帐号分配至少两个ID，一个是用户ID(UID)，一个是组ID(GID),管理员的两<br>个ID都为0，非管理员为1000～65535 。  </p>
+<ul>
+<li>用户帐号及其相关信息均存放在/etc/passwd配置文件中，密码信息存放在/etc/shadow配置文件中  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>/etc/passwd文件结构意义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">用户名称</th>
+<th style="text-align:center">用户密码</th>
+<th style="text-align:center">UID</th>
+<th style="text-align:center">GID</th>
+<th style="text-align:center">用户说明信息</th>
+<th style="text-align:center">用户家目录</th>
+<th style="text-align:center">用户的shell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">root</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">root</td>
+<td style="text-align:center">/root</td>
+<td style="text-align:center">/bin/bash</td>
+</tr>
+</tbody>
+</table>
+<h1 id="添加、修改与删除用户的命令"><a href="#添加、修改与删除用户的命令" class="headerlink" title="添加、修改与删除用户的命令"></a>添加、修改与删除用户的命令</h1><h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>添加新的用户帐号命令<br>useradd 参数选项 用户名  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">制定用户家目录</td>
+</tr>
+<tr>
+<td style="text-align:center">-M</td>
+<td style="text-align:center">不创建家目录</td>
+</tr>
+<tr>
+<td style="text-align:center">-e</td>
+<td style="text-align:center">指定账户过期的时间，格式为MM/DD/YY or YYYY-MM-DD</td>
+</tr>
+<tr>
+<td style="text-align:center">-g</td>
+<td style="text-align:center">指定账户的主组群（存在的）</td>
+</tr>
+<tr>
+<td style="text-align:center">-G</td>
+<td style="text-align:center">指定账户的附属组，多组用逗号分隔</td>
+</tr>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">不创建和用户帐号同名的私有用户组</td>
+</tr>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:center">指定账户登录时使用的shell解释器</td>
+</tr>
+<tr>
+<td style="text-align:center">-u</td>
+<td style="text-align:center">指定用户的默认UID</td>
+</tr>
+</tbody>
+</table>
+<h2 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h2><p>设置用户密码<br>passwd 参数选项 用户账户名  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-l</td>
+<td style="text-align:center">锁定用户，禁止其登录</td>
+</tr>
+<tr>
+<td style="text-align:center">-u</td>
+<td style="text-align:center">解除锁定，允许用户登录</td>
+</tr>
+<tr>
+<td style="text-align:center">-S</td>
+<td style="text-align:center">显示用户的密码是否被锁定，以及密码所采用的加密算法名称</td>
+</tr>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">清空账户密码，将不能登录系统，除非重新设置密码</td>
+</tr>
+<tr>
+<td style="text-align:center">-stdin</td>
+<td style="text-align:center">允许通过标准输入修改密码</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h2><p>修改用户属性<br>usermod 参数选项 用户账户名</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-m,-d</td>
+<td style="text-align:center">重新指定用户的家目录并自动把旧的数据转移过去</td>
+</tr>
+<tr>
+<td style="text-align:center">-e</td>
+<td style="text-align:center">修改账户过期的时间</td>
+</tr>
+<tr>
+<td style="text-align:center">-g</td>
+<td style="text-align:center">修改主组群</td>
+</tr>
+<tr>
+<td style="text-align:center">-G</td>
+<td style="text-align:center">修改附属组</td>
+</tr>
+<tr>
+<td style="text-align:center">-l</td>
+<td style="text-align:center">修改用户名称</td>
+</tr>
+<tr>
+<td style="text-align:center">-L</td>
+<td style="text-align:center">锁定用户</td>
+</tr>
+<tr>
+<td style="text-align:center">-U</td>
+<td style="text-align:center">解锁用户</td>
+</tr>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:center">修改用户登录时使用的shell解释器</td>
+</tr>
+<tr>
+<td style="text-align:center">-u</td>
+<td style="text-align:center">修改用户的UID</td>
+</tr>
+</tbody>
+</table>
+<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>删除用户<br>userdel -r 用户账户名  </p>
+<h1 id="添加、修改和删除用户组的命令"><a href="#添加、修改和删除用户组的命令" class="headerlink" title="添加、修改和删除用户组的命令"></a>添加、修改和删除用户组的命令</h1><h2 id="groupadd"><a href="#groupadd" class="headerlink" title="groupadd"></a>groupadd</h2><p>增加一个新的用户组<br>groupadd 参数选项 用户组名  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-g</td>
+<td style="text-align:center">指定GID</td>
+</tr>
+</tbody>
+</table>
+<h2 id="groupmod"><a href="#groupmod" class="headerlink" title="groupmod"></a>groupmod</h2><p>修改用户组名信息<br>groupmod 参数选项  用户组名  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-g</td>
+<td style="text-align:center">修改GID</td>
+</tr>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">修改组名</td>
+</tr>
+</tbody>
+</table>
+<h2 id="groupdel"><a href="#groupdel" class="headerlink" title="groupdel"></a>groupdel</h2><p>删除用户组名<br>groupdel 用户组名</p>
+<h1 id="文件权限管理"><a href="#文件权限管理" class="headerlink" title="文件权限管理"></a>文件权限管理</h1><h2 id="文件详细信息，共分七列，所含信息的含义如下"><a href="#文件详细信息，共分七列，所含信息的含义如下" class="headerlink" title="文件详细信息，共分七列，所含信息的含义如下:"></a>文件详细信息，共分七列，所含信息的含义如下:</h2><ol>
+<li>文件类型权限包含文件所属类型和用户对该文件的权限，共有11位或者10位，最后一位<code>.</code>与selinux和acl有关   </li>
+</ol>
+<ul>
+<li>第一位用来描述文件类型，如下表所示:    </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">第一位</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">普通文件</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:center">目录文件</td>
+</tr>
+<tr>
+<td style="text-align:center">l</td>
+<td style="text-align:center">软链接文件</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center">块设备</td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:center">窜行端口设备，如键盘、鼠标等</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center">套接字文件，用于进程间通信</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>后边的九位，没三位为一组，均是可读”r” 可写”w” 可执行”x” 参数的组合，前三，中三，后三分<br>  别代表所属用户(u)的权限，所属组(g)的权限和其他所有用户(o)的权限</li>
+<li>文件权限的数字法，基于字符的rwx的权限计算而来，r(4)、w(2)、x(1)</li>
+</ul>
+<ol start="2">
+<li>链接占用的节点数;普通文件的节点数和链接数有关，目录与目录下的所有目录及文件有关  </li>
+<li>文件所属用户   </li>
+<li>文件所属组  </li>
+<li>文件大小，kb为单位  </li>
+<li>最后一次修改日期</li>
+<li>文件名  </li>
+</ol>
+<h2 id="文件权限的更改"><a href="#文件权限的更改" class="headerlink" title="文件权限的更改"></a>文件权限的更改</h2><ol>
+<li><p>chown<br>更改文件的所属用户和所属组<br>chown 参数 账户名 || :组名  文件名<br>文件夹需要加-R  </p>
+</li>
+<li><p>chmod<br>改变用户对文件的读写权限<br>chmod 参数 ijk 文件名  </p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ijk</td>
+<td style="text-align:center">文件权限的数组法来修改权限</td>
+</tr>
+<tr>
+<td style="text-align:center">-R</td>
+<td style="text-align:center">当文件是文件夹时需要</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">全部权限，以下参数的用法，例如：chmod u+w test</td>
+</tr>
+<tr>
+<td style="text-align:center">u</td>
+<td style="text-align:center">用户权限</td>
+</tr>
+<tr>
+<td style="text-align:center">g</td>
+<td style="text-align:center">组权限</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td style="text-align:center">其他组群权限</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>umask<br>设置需要减去的权限<br>umask ijk  </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ijk</td>
+<td style="text-align:center">文件权限的数字法</td>
+</tr>
+<tr>
+<td style="text-align:center">无参数</td>
+<td style="text-align:center">查看预设值</td>
+</tr>
+</tbody>
+</table>
+<h1 id="文件特殊权限"><a href="#文件特殊权限" class="headerlink" title="文件特殊权限"></a>文件特殊权限</h1><h2 id="SUID"><a href="#SUID" class="headerlink" title="SUID"></a>SUID</h2><p>在一个可执行文件加上s权限，任何人在执行该命令时会临时具有所属用户的权限<br>chmod u+s 可执行文件  </p>
+<ol>
+<li>SUID仅对命令有效  </li>
+<li>执行者要有x的权限  </li>
+<li>仅在执行时有效  </li>
+<li>执行者将具有所属用户的权限  </li>
+</ol>
+<h2 id="SGID"><a href="#SGID" class="headerlink" title="SGID"></a>SGID</h2><p>SGID针对命令是获得命令所属组的权限，针对目录的话，那么目录下创建的文件自动会继承目录所属组<br>chmod g+s 文件 || 目录  </p>
+<h2 id="SBIT"><a href="#SBIT" class="headerlink" title="SBIT"></a>SBIT</h2><p>如果对一个目录加上SBIT权限，那么仅root用户和该目录下的文件拥有人才能删除该文件<br>chmod o+t 文件 || 目录  </p>
+<ul>
+<li>如果采用数字方式，在三位数字前再加上一位代表特殊权限，4代表SUID，2代表SGID，1代表SBIT  </li>
+</ul>
+<h1 id="文件隐藏属性与访问控制列表"><a href="#文件隐藏属性与访问控制列表" class="headerlink" title="文件隐藏属性与访问控制列表"></a>文件隐藏属性与访问控制列表</h1><h2 id="chattr"><a href="#chattr" class="headerlink" title="chattr"></a>chattr</h2><p>设置文件的隐藏权限<br>chattr 参数 文件  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+i，-i</td>
+<td style="text-align:left">+可以让文件不能被删除，重命名，不能写入，添加数据，不能创建硬链接;-恢复</td>
+</tr>
+<tr>
+<td style="text-align:center">+a,-a</td>
+<td style="text-align:left">+让文件添加数据，不能删除，修改数据</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lsattr"><a href="#lsattr" class="headerlink" title="lsattr"></a>lsattr</h2><p>显示文件的隐藏权限<br>lsattr 参数 文件  </p>
+<h1 id="访问控制列表"><a href="#访问控制列表" class="headerlink" title="访问控制列表"></a>访问控制列表</h1><h2 id="setfacl"><a href="#setfacl" class="headerlink" title="setfacl"></a>setfacl</h2><p>管理设置文件/目录的ACL规则<br>setfacl 参数 文件名  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-R</td>
+<td style="text-align:center">对目录文件使用</td>
+</tr>
+<tr>
+<td style="text-align:center">-m</td>
+<td style="text-align:center">普通文件</td>
+</tr>
+<tr>
+<td style="text-align:center">-b</td>
+<td style="text-align:center">删除文件的ACL</td>
+</tr>
+</tbody>
+</table>
+<h2 id="getfacl"><a href="#getfacl" class="headerlink" title="getfacl"></a>getfacl</h2><p>显示文件的ACL信息<br>getfacl  文件名  </p>
+<h1 id="su与sudo命令"><a href="#su与sudo命令" class="headerlink" title="su与sudo命令"></a>su与sudo命令</h1><h2 id="su"><a href="#su" class="headerlink" title="su"></a>su</h2><p>切换用户<br>su 用户名  </p>
+<h2 id="su-1"><a href="#su-1" class="headerlink" title="su -"></a>su -</h2><p>切换用户且重新读取环境变量<br>su - 用户名  </p>
+<h2 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h2><p>以管理员身份运行命令<br>sudo 命令  </p>
+<h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h1><p>输入命令vimtutor自行学习  </p>
+<h1 id="Gcc和G"><a href="#Gcc和G" class="headerlink" title="Gcc和G++"></a>Gcc和G++</h1><h2 id="编译和运行"><a href="#编译和运行" class="headerlink" title="编译和运行"></a>编译和运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gcc/g++ -c 源代码文件名             //编译</span><br><span class="line">gcc/g++ -o 可执行文件名  源代码文件     //生成可执行文件  </span><br><span class="line">./可执行文件名      //执行文件</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/05/Linux基本知识/" rel="next" title="Linux基本知识">
+                <i class="fa fa-chevron-left"></i> Linux基本知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/05/Linxu-命令行/" rel="prev" title="《Linxu_命令行》笔记">
+                《Linxu_命令行》笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="ZeLinYang">
+            
+              <p class="site-author-name" itemprop="name">ZeLinYang</p>
+              <div class="site-description motion-element" itemprop="description">刚踏入编程的小萌新一枚</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用户与组"><span class="nav-number">1.</span> <span class="nav-text">用户与组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户分类"><span class="nav-number">1.1.</span> <span class="nav-text">用户分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立帐号"><span class="nav-number">1.2.</span> <span class="nav-text">建立帐号</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加、修改与删除用户的命令"><span class="nav-number">2.</span> <span class="nav-text">添加、修改与删除用户的命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#useradd"><span class="nav-number">2.1.</span> <span class="nav-text">useradd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#passwd"><span class="nav-number">2.2.</span> <span class="nav-text">passwd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#usermod"><span class="nav-number">2.3.</span> <span class="nav-text">usermod</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#userdel"><span class="nav-number">2.4.</span> <span class="nav-text">userdel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加、修改和删除用户组的命令"><span class="nav-number">3.</span> <span class="nav-text">添加、修改和删除用户组的命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#groupadd"><span class="nav-number">3.1.</span> <span class="nav-text">groupadd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#groupmod"><span class="nav-number">3.2.</span> <span class="nav-text">groupmod</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#groupdel"><span class="nav-number">3.3.</span> <span class="nav-text">groupdel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件权限管理"><span class="nav-number">4.</span> <span class="nav-text">文件权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件详细信息，共分七列，所含信息的含义如下"><span class="nav-number">4.1.</span> <span class="nav-text">文件详细信息，共分七列，所含信息的含义如下:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件权限的更改"><span class="nav-number">4.2.</span> <span class="nav-text">文件权限的更改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件特殊权限"><span class="nav-number">5.</span> <span class="nav-text">文件特殊权限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SUID"><span class="nav-number">5.1.</span> <span class="nav-text">SUID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SGID"><span class="nav-number">5.2.</span> <span class="nav-text">SGID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SBIT"><span class="nav-number">5.3.</span> <span class="nav-text">SBIT</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件隐藏属性与访问控制列表"><span class="nav-number">6.</span> <span class="nav-text">文件隐藏属性与访问控制列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chattr"><span class="nav-number">6.1.</span> <span class="nav-text">chattr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lsattr"><span class="nav-number">6.2.</span> <span class="nav-text">lsattr</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#访问控制列表"><span class="nav-number">7.</span> <span class="nav-text">访问控制列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#setfacl"><span class="nav-number">7.1.</span> <span class="nav-text">setfacl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getfacl"><span class="nav-number">7.2.</span> <span class="nav-text">getfacl</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#su与sudo命令"><span class="nav-number">8.</span> <span class="nav-text">su与sudo命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#su"><span class="nav-number">8.1.</span> <span class="nav-text">su</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#su-1"><span class="nav-number">8.2.</span> <span class="nav-text">su -</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sudo"><span class="nav-number">8.3.</span> <span class="nav-text">sudo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim"><span class="nav-number">9.</span> <span class="nav-text">vim</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gcc和G"><span class="nav-number">10.</span> <span class="nav-text">Gcc和G++</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译和运行"><span class="nav-number">10.1.</span> <span class="nav-text">编译和运行</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZeLinYang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

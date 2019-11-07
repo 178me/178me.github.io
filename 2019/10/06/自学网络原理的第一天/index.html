@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="有趣的网络原理">
+<meta name="keywords" content="178me">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自学网络原理的第一天">
+<meta property="og:url" content="http://yoursite.com/2019/10/06/自学网络原理的第一天/index.html">
+<meta property="og:site_name" content="178me">
+<meta property="og:description" content="有趣的网络原理">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-07T16:36:30.747Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自学网络原理的第一天">
+<meta name="twitter:description" content="有趣的网络原理">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/10/06/自学网络原理的第一天/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>自学网络原理的第一天 | 178me</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">178me</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">为了开发而努力开发</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/06/自学网络原理的第一天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZeLinYang">
+      <meta itemprop="description" content="刚踏入编程的小萌新一枚">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="178me">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">自学网络原理的第一天
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-06 18:53:53" itemprop="dateCreated datePublished" datetime="2019-10-06T18:53:53+08:00">2019-10-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-08 00:36:30" itemprop="dateModified" datetime="2019-11-08T00:36:30+08:00">2019-11-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>有趣的网络原理<br><a id="more"></a></p>
+<h2 id="第二章：网络应用"><a href="#第二章：网络应用" class="headerlink" title="第二章：网络应用"></a>第二章：网络应用</h2><h1 id="计算机网络应用体系结构"><a href="#计算机网络应用体系结构" class="headerlink" title="计算机网络应用体系结构"></a>计算机网络应用体系结构</h1><p>先来简单的介绍下有哪些体系结构  </p>
+<ol>
+<li><p>客户/服务器(C/S)结构网络应用<br>(C/S)结构的网络应用最基本，最典型的网络应用。它需要服务器程序先运行，客户程序后运行并主动请求于服务器进行通信。<br>例如www应用，文件传输FTP、电子邮件等。<br>区别于其他的结构体系方法就是它的通信只在客户于服务器之间。</p>
+</li>
+<li><p>纯P2P结构网络应用结构<br>很明显，这是一个客户对客户的体系结构，P2P应用中的每个对等端都同时具备C/S应用的客户与服务的特征，是一个服务器与客户的结合体。<br>例如Gnurella、BitTorent等<br>在这里，我们已经认识到两种体系结构了，他们各自有优缺点，所以按照取长补短的原则就出现了混合型的体系结构(Ps:好像每次有这种结构啥的都有混合型)</p>
+</li>
+<li><p>混合结构网络应用<br>它既有中心服务器的存在，又有对等端间的直接通信。是C/S和P2P的结合。<br>客户通过C/S方式想服务器注册自己的网络地址，然后就可以在中心服务器找到其他的客户共享资源或分享资源。</p>
+</li>
+</ol>
+<h1 id="网络应用通信基本原理"><a href="#网络应用通信基本原理" class="headerlink" title="网络应用通信基本原理"></a>网络应用通信基本原理</h1><ul>
+<li>首先，网络应用的本质就是应用进程之间的通信。  </li>
+<li>基本通信方式是C/S通信。  </li>
+<li>应用进程之间遵循应用层协议交换应用层报文  </li>
+<li>应用层协议定义了语法、语序、语义三要素内容。</li>
+<li>按道理说，应该是应用层和应用层之间直接进行传输，但其实是应用层需要通过层间接口将报文发送给传输层，请求端到端传输服务。  </li>
+<li>编程接口是套接字，它是网络进程之间进行网络通信时，真正收发报文的通道。  </li>
+<li>对于传输层协议，我们需要为其接口的每个套接字编号，用来标识这个套接字，该编号就是端口号。  </li>
+<li>比如web服务器的默认端口号是80，是为熟知端口号</li>
+<li>每个应用层通过一个或多个套接字于传输层进行接口，因此，我们可以通过进程运行的主机ip地址和套接字绑定的端口号来标识应用进程。  </li>
+</ul>
+<p>Internet提供两种传输层协议  </p>
+<ul>
+<li>面向连接的可靠字节流传输服务<br>对应传输层的TCP协议，提供面向连接的服务和可靠的数据传送服务。</li>
+<li>无连接的不可靠数据报传输服务<br>对应UDP，不提供传输服务保障的轻量级传输层协议，仅提供最小的尽力服务。</li>
+</ul>
+<p>但是这两种协议都不提供端到端吞吐量以及时延保障服务。  </p>
+<h1 id="域名系统"><a href="#域名系统" class="headerlink" title="域名系统"></a>域名系统</h1><p>用户使用网络应用时，需要通过指定的IP地址和端口号才能访问。这非常不利于记忆，所以人们就发明了域名，用来访问指定的服务器主机。<br>域名系统(DNS)可以将域名映射为IP地址。实现将域名映射成为IP地址的过程，称为域名解析。  </p>
+<h2 id="层次化域名空间"><a href="#层次化域名空间" class="headerlink" title="层次化域名空间"></a>层次化域名空间</h2><p>DNS为了实现高效的管理和查找，域名的结构由标点序列组成，各标号用点隔开  </p>
+<ol>
+<li>国家顶级域名nTLD: cn(中国)，us(美国)  </li>
+<li>通用顶级域名gTLD: com(公司和企业)，net(网络服务机构),org(非盈利性组织),edu(教育机构)，gov(政府部门结构)，mil(军事)，int(国际).  </li>
+<li>基础结构域名: 只有一个，arpa,用于反向域名解析，因此又称反向域名  </li>
+</ol>
+<h2 id="域名服务器"><a href="#域名服务器" class="headerlink" title="域名服务器"></a>域名服务器</h2><ol>
+<li>根域名服务器<br>最重要的域名服务器，在因特网上又13个不同ip地址的根域名服务器。从a开始，比如说a.rootservers.net  </li>
+<li>顶级域名服务器<br>负责管理在该顶级域名服务器注册的所有二级域名  </li>
+<li>权威域名服务器<br>负责一个区的域名服务器，保存该区的所有主机域名到IP地址的映射  </li>
+</ol>
+<h2 id="域名解析过程"><a href="#域名解析过程" class="headerlink" title="域名解析过程"></a>域名解析过程</h2><ol>
+<li>递归解析  </li>
+<li>迭代解析  </li>
+</ol>
+<h1 id="万维网应用"><a href="#万维网应用" class="headerlink" title="万维网应用"></a>万维网应用</h1><p>web应用操作简单，其按需浏览、图形化界面，主要包括web服务器、浏览器、超文件传输协议等。  </p>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>web的应用层协议，定义浏览器如何向web服务器发送请求以及web服务器如何向浏览器进行反应。  </p>
+<ul>
+<li>HTTP连接  </li>
+</ul>
+<ol>
+<li>并行连接  </li>
+<li>持久连接  </li>
+</ol>
+<ul>
+<li>HTTP报文  </li>
+</ul>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>小型文本文件，为了辨别用户身份、进行会话跟踪而存储本地的消息。  </p>
+<h1 id="Internet电子邮件"><a href="#Internet电子邮件" class="headerlink" title="Internet电子邮件"></a>Internet电子邮件</h1><h2 id="电子邮件结构"><a href="#电子邮件结构" class="headerlink" title="电子邮件结构"></a>电子邮件结构</h2><ul>
+<li>邮件服务器  </li>
+<li>简单邮件传输协议(SMTP)</li>
+<li>用户代理</li>
+<li>邮件读取协议  </li>
+</ul>
+<h2 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h2><p>是Internet电子邮件中核心应用层协议，实现邮件服务器之间或用户代理到邮件服务器之间的邮件传输。</p>
+<h2 id="电子邮件格式于MIME"><a href="#电子邮件格式于MIME" class="headerlink" title="电子邮件格式于MIME"></a>电子邮件格式于MIME</h2><h2 id="邮件读取协议"><a href="#邮件读取协议" class="headerlink" title="邮件读取协议"></a>邮件读取协议</h2><ol>
+<li>POP3  </li>
+<li>IMAP  </li>
+<li>HTTP  </li>
+</ol>
+<h1 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h1><p>文件传送协议，是在互联上的两台不同主机间实现文件互传的网络应用  </p>
+<h1 id="socket网络编程"><a href="#socket网络编程" class="headerlink" title="socket网络编程"></a>socket网络编程</h1>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/11/汇编语言基础/" rel="next" title="汇编语言基础">
+                <i class="fa fa-chevron-left"></i> 汇编语言基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/26/My-Computer/" rel="prev" title="My_Computer">
+                My_Computer <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="ZeLinYang">
+            
+              <p class="site-author-name" itemprop="name">ZeLinYang</p>
+              <div class="site-description motion-element" itemprop="description">刚踏入编程的小萌新一枚</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章：网络应用"><span class="nav-number">1.</span> <span class="nav-text">第二章：网络应用</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络应用体系结构"><span class="nav-number"></span> <span class="nav-text">计算机网络应用体系结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络应用通信基本原理"><span class="nav-number"></span> <span class="nav-text">网络应用通信基本原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#域名系统"><span class="nav-number"></span> <span class="nav-text">域名系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#层次化域名空间"><span class="nav-number">1.</span> <span class="nav-text">层次化域名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名服务器"><span class="nav-number">2.</span> <span class="nav-text">域名服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析过程"><span class="nav-number">3.</span> <span class="nav-text">域名解析过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#万维网应用"><span class="nav-number"></span> <span class="nav-text">万维网应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">1.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie"><span class="nav-number">2.</span> <span class="nav-text">Cookie</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Internet电子邮件"><span class="nav-number"></span> <span class="nav-text">Internet电子邮件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#电子邮件结构"><span class="nav-number">1.</span> <span class="nav-text">电子邮件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SMTP"><span class="nav-number">2.</span> <span class="nav-text">SMTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电子邮件格式于MIME"><span class="nav-number">3.</span> <span class="nav-text">电子邮件格式于MIME</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#邮件读取协议"><span class="nav-number">4.</span> <span class="nav-text">邮件读取协议</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FTP"><span class="nav-number"></span> <span class="nav-text">FTP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#socket网络编程"><span class="nav-number"></span> <span class="nav-text">socket网络编程</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZeLinYang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
