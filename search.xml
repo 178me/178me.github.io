@@ -166,6 +166,6 @@
   <entry>
     <title><![CDATA[我的第一篇博客]]></title>
     <url>%2F2019%2F05%2F06%2FMY_first_Blog%2F</url>
-    <content type="text"><![CDATA[学了点git Git为什么要使用Git 协同修改 数据备份 版本管理 权限管理 历史纪录 分支管理 Git提交代码五步曲 初始化本地库git init 设置签名 123456//系统用户级别git config --global user.name 名称git config --global user.email 邮箱 //项目级别git config user.name 名称git config user.email 邮箱 添加文件到暂存区 12git add 文件名 //提交单个文件git add -A //提交所有文件 提交到本地库git commit -m 描述 上传到远程仓库git push 对读者的话Git是一个很好的代码托管中心，可以把你的代码放到服务器存放，还可以进行版本控制;大家有兴趣可以去自行找视频学习。]]></content>
+    <content type="text"><![CDATA[学了点git Git为什么要使用Git 协同修改 数据备份 版本管理 权限管理 历史纪录 分支管理 Git提交代码五步曲 初始化本地库git init 设置签名 123456//系统用户级别git config --global user.name 名称git config --global user.email 邮箱 //项目级别git config user.name 名称git config user.email 邮箱 添加文件到暂存区 12git add 文件名 //提交单个文件git add -A //提交所有文件 提交到本地库git commit -m 描述 上传到远程仓库git push git push error: 无法推送一些引用到XXXgit push origin HEAD:refs/for/master 对读者的话Git是一个很好的代码托管中心，可以把你的代码放到服务器存放，还可以进行版本控制;大家有兴趣可以去自行找视频学习。]]></content>
   </entry>
 </search>
