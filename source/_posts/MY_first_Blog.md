@@ -51,6 +51,9 @@ git add -A         //提交所有文件
 5. 上传到远程仓库  
 `git push`
 
+#### git push error: 无法推送一些引用到XXX 
+git push origin HEAD:refs/for/master
+
 # 对读者的话  
 Git是一个很好的代码托管中心，可以把你的代码放到服务器存放，还可以进行版本控制;大家有兴趣可
 以去自行找视频学习。
