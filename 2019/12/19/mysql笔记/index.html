@@ -96,20 +96,18 @@
 
 
 
-  <meta name="description" content="学了点git">
+  <meta name="description" content="写点东西">
 <meta name="keywords" content="178me">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://yoursite.com/2019/05/06/MY_first_Blog/index.html">
+<meta property="og:title" content="mysql笔记">
+<meta property="og:url" content="http://yoursite.com/2019/12/19/mysql笔记/index.html">
 <meta property="og:site_name" content="178me">
-<meta property="og:description" content="学了点git">
+<meta property="og:description" content="写点东西">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/05/06/MY_first_Blog/功能.png">
-<meta property="og:updated_time" content="2019-11-08T11:41:33.447Z">
+<meta property="og:updated_time" content="2019-12-19T07:00:48.775Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一篇博客">
-<meta name="twitter:description" content="学了点git">
-<meta name="twitter:image" content="http://yoursite.com/2019/05/06/MY_first_Blog/功能.png">
+<meta name="twitter:title" content="mysql笔记">
+<meta name="twitter:description" content="写点东西">
 
 
 
@@ -117,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/06/MY_first_Blog/">
+  <link rel="canonical" href="http://yoursite.com/2019/12/19/mysql笔记/">
 
 
 
@@ -127,7 +125,7 @@
   };
 </script>
 
-  <title>我的第一篇博客 | 178me</title>
+  <title>mysql笔记 | 178me</title>
   
 
 
@@ -330,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/06/MY_first_Blog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/19/mysql笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZeLinYang">
@@ -347,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我的第一篇博客
+          <h1 class="post-title" itemprop="name headline">mysql笔记
 
               
             
@@ -373,24 +371,12 @@
                 
               
 
-              <time title="创建时间：2019-05-06 14:46:51" itemprop="dateCreated datePublished" datetime="2019-05-06T14:46:51+08:00">2019-05-06</time>
+              <time title="创建时间：2019-12-19 14:31:56 / 修改时间：15:00:48" itemprop="dateCreated datePublished" datetime="2019-12-19T14:31:56+08:00">2019-12-19</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-08 19:41:33" itemprop="dateModified" datetime="2019-11-08T19:41:33+08:00">2019-11-08</time>
               
             
           </span>
@@ -424,37 +410,9 @@
       
 
       
-        <p>学了点git<br><a id="more"></a></p>
-<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h1 id="为什么要使用Git"><a href="#为什么要使用Git" class="headerlink" title="为什么要使用Git"></a><strong>为什么要使用Git</strong></h1><p><img src="/2019/05/06/MY_first_Blog/功能.png" alt="GIT功能"></p>
-<ul>
-<li><p>协同修改</p>
-</li>
-<li><p>数据备份</p>
-</li>
-<li><p>版本管理</p>
-</li>
-<li><p>权限管理</p>
-</li>
-<li><p>历史纪录 </p>
-</li>
-<li><p>分支管理</p>
-</li>
-</ul>
-<h1 id="Git提交代码五步曲"><a href="#Git提交代码五步曲" class="headerlink" title="Git提交代码五步曲"></a>Git提交代码五步曲</h1><ol>
-<li>初始化本地库<br><code>git init</code></li>
-<li>设置签名  </li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//系统用户级别</span><br><span class="line">git config --global user.name 名称</span><br><span class="line">git config --global user.email 邮箱  </span><br><span class="line">//项目级别</span><br><span class="line">git config user.name 名称</span><br><span class="line">git config user.email 邮箱</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li><p>添加文件到暂存区</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名      //提交单个文件</span><br><span class="line">git add -A         //提交所有文件</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>提交到本地库<br><code>git commit -m 描述</code></p>
-</li>
-<li>上传到远程仓库<br><code>git push</code></li>
-</ol>
-<h4 id="git-push-error-无法推送一些引用到XXX"><a href="#git-push-error-无法推送一些引用到XXX" class="headerlink" title="git push error: 无法推送一些引用到XXX"></a>git push error: 无法推送一些引用到XXX</h4><p>git push origin HEAD:refs/for/master</p>
-<h1 id="对读者的话"><a href="#对读者的话" class="headerlink" title="对读者的话"></a>对读者的话</h1><p>Git是一个很好的代码托管中心，可以把你的代码放到服务器存放，还可以进行版本控制;大家有兴趣可<br>以去自行找视频学习。</p>
+        <p>写点东西<br><a id="more"></a></p>
+<h1 id="主键和外键"><a href="#主键和外键" class="headerlink" title="主键和外键"></a>主键和外键</h1><p>外键是父表的主键，依赖于父表中的字段</p>
+<p>外键的类型要和主键类型一致？</p>
 
       
     </div>
@@ -485,14 +443,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/11/30/java笔记/" rel="next" title="java笔记">
+                <i class="fa fa-chevron-left"></i> java笔记
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/09/shell快捷键大全/" rel="prev" title="shell快捷键大全">
-                shell快捷键大全 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/02/pacman/" rel="prev" title="pacman">
+                pacman <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -642,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要使用Git"><span class="nav-number">2.</span> <span class="nav-text">为什么要使用Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git提交代码五步曲"><span class="nav-number">3.</span> <span class="nav-text">Git提交代码五步曲</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-push-error-无法推送一些引用到XXX"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">git push error: 无法推送一些引用到XXX</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#对读者的话"><span class="nav-number">4.</span> <span class="nav-text">对读者的话</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主键和外键"><span class="nav-number">1.</span> <span class="nav-text">主键和外键</span></a></li></ol></div>
             
 
           </div>
