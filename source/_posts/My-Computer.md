@@ -123,6 +123,9 @@ echo export EDITOR=/usr/bin/vim >> ~/.bashrc
 7. 修改键盘布局  
 setxkbmap us
 
+8. 时间同步问题
+ntpdate cn.pool.ntp.org
+hwclock -w
 
 
 

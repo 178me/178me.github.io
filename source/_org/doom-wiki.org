@@ -1,0 +1,50 @@
+#+TITLE: doom-emacs-wiki
+
+- 用来记录使用 emacs 的一些笔记
+(setq org-src-fontify-natively t)
+* leader key
+
+** f
+- r 打开最近的文件
+
+* evil
+** 有趣的文本操作
+- 在使用 t 和 f 搜索文本之后可以用;来快速跳转
+* key
+  ** 一些方便的快捷键
+  - <C-w-v>:新建垂直窗口
+  - <C-w-s>:新建水平窗口
+- <C-w-q>:关闭当前窗口
+  - <C-w-w/j/k/h/l>:窗口之间切换
+  - <C-x-b>:选择 buffer
+
+* org
+** 创建标题
+   - 使用“*”开头来创建标题
+   - 标题之间的快速移动
+   - emacs 的移动快捷键 f b n p 前面加上 C-c
+** 链接
+   - 使用[[]]或者[[][]]或者快捷键 C-c C-l 来创建
+   - 打开链接使用 C-c C-o
+   - 目标链接:进入链接达到特定的位置。比如双冒号之后的一个行号或搜索项
+     + file:~/code/main.c::255                     进入到 255 行
+** 表格
+   - 以“|”开头来创建表格
+   - 在表格内 Tab 键前往下一个区域，S-Tab 则反之
+   - 回车键进入下一行
+   - C-c - 当前行下面加水平线
+** 代办事项
+   - C-c t 和 Shift+left/right 来切换 todo 的状态
+** 标签
+   - 光标在标题内使用 C-c C-c 来创建标签
+   - 使用 C-c \ 查找标签
+** 时间戳
+   - C-c . 创建时间戳
+   - Shift 上下左右 修改时间
+   - C-c C-d 在标题下面一行插入一个带有“DEADLINE”关键字的时间戳
+* theme
+- Collection theme
+- 护眼色
+doom-solarized-light
+- 夜间模式
+doom-snazzy
